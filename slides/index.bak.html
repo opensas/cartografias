@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>CartoDB: PostgreSQL + PostGIS en la nube</title>
+
+    <meta name="description" content="CartoDB: PostgreSQL + PostGIS en la nube">
+    <meta name="author" content="opensas">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>CartoDB</h1>
+          <h3>PostgreSQL + PostGIS en la nube</h3>
+          <p>
+            <small>
+              Creado por <br />
+              <a href="http://www.thecoffemaker.com.ar/">TheCoffeMaker</a> / <a href="https://twitter.com/TheCoffeMaker">@TheCoffeMaker</a><br />
+              <a href="http://opensas.wordpress.com/">opensas</a> / <a href="https://twitter.com/develsas">@develsas</a>
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <h2>¿Qué es CartoDB?</h2>
+          <ul>
+            <li>Herramienta de software libre</li>
+            <li>para almacenar y visualizar información geoespacial en la web</li>
+            <li>de manera sencilla y rápida</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Más precisamente</h2>
+          <ul>
+            <li class="fragment">Una interfaz de usuario web para subir, crear, editar, vizualizar y exportar información geoespacial</li>
+            <li class="fragment">Un servidor de base de datos geoespacial basado en PostgreSQL y PostGIS 2.0</li>
+            <li class="fragment">Un web service REST que soporta consultas de SQL y PostGIS y retorna GeoJSON</li>
+            <li class="fragment">Un servicio pago para guardar tus bases de datos geoespaciales en la nube</li>
+            <li class="fragment">o la posibilidad de instalarlo en tu propio servidor</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>¿Por qué CartoDB?</h2>
+          <ul>
+            <li class="fragment">Es software libre</li>
+            <li class="fragment">Tiene todo el poder de PostgreSQL y PostGIS</li>
+            <li class="fragment">Es una alternativa libre a google fussion tables</li>
+            <li class="fragment">Que respeta tu privacidad</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Es software libre...</h2>
+          <div class="fragment">
+            <h2>hecho con software libre</h2>
+            <ul>
+              <li>Ubuntu</li>
+              <li>PostgreSQL 9.1.x</li>
+              <li>PostGIS 2.0</li>
+              <li>Redis</li>
+              <li>Ruby</li>
+              <li>NodeJS</li>
+              <li>Varnish</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Agenda para los próximos 60 minutos...</h2>
+          <ul>
+            <li>Importar datos</li>
+            <li>Crear y publicar visualizaciones</li>
+            <li>Geocodificar</li>
+            <li>Usar postGIS SQL</li>
+            <li>Crear nuestros propios mapa</li>
+            <li>Usar la api</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Demo 1</h2>
+          <h3>Choropleth de población argentina</h3>
+          <br />
+          <h3>Vamos a ver como...</h3>
+          <ul class="fragment">
+            <li>Importar datos</li>
+            <li>Modificar columnas</li>
+            <li>Crear columnas calculadas</li>
+            <li>Crear visualizaciones</li>
+            <li>Publicarlas en la web y...</li>
+            <li class="fragment">¡Descubrir qué cuernos es un choropleth!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Demo 2</h2>
+          <h3>Geocodificación y consultas espaciales</h3>
+          <br />
+          <h3>Vamos a ver...</h3>
+          <ul class="fragment">
+            <li>Importar y geocodificar direcciones</li>
+            <li>Qué son las proyecciones</li>
+            <li>Cómo CartoDB almacena la información espacial</li>
+            <li>Usar consultas PostGIS para crear geometrías</li>
+            <li>Algunas consultas más comunes</li>
+            <li>Los x puntos más cercanos a otro punto</li>
+            <li>Los puntos a x metros de otro punto</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Proyecciones</h2>
+          <ul>
+            <li>La tierra es esférica, pero nuestros mapas no...</li>
+            <li class="fragment">Una proyección define un sistema completo de referencia geoespacial.</li>
+            <li class="fragment">Establece cómo se proyectan los puntos de la superficie esférica de la tierra a un mapa plano</li>
+            <li class="fragment">Provee sentido geoespacial a lo que otra manera sería tan sólo un par de números sin significado.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dos tipos de proyecciones:</h2>
+          <br />
+
+          <div class="fragment">
+            <h3>the_geom</h3>
+            <p>EPSG:<b>4326</b> para almacenar la información y realizar operaciones</p>
+          </div>
+          <ul  class="fragment">
+            <li>Se trata de un estándar en geodesia, cartografía, y navegación, que data de 1984.</li>
+            <li>Sus siglas significan sistema geodésico mundial.</li>
+            <li>También se lo conoce como WGS 1984 o simplemente WGS 84</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dos tipos de proyecciones:</h2>
+          <br />
+
+          <div class="fragment">
+            <h3>the_geom_webmercator</h3>
+            <p>EPSG:<b>3857</b> para desplegar la información en pantalla</p>
+          </div>
+          <ul class="fragment">
+            <li>También conocido como Spherical Mercator projection</li>
+            <li>Sistema de coordenadas popularizado por Google y OpenStreetMap</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>PostGIS</h2>
+          <h3>Creamos una tabla de manera manual</h3>
+          <pre><code data-trim contenteditable>
+insert into test( the_geom )
+values (
+  ST_GeomFromText(
+    'POINT(-58.38145 -34.60368)'
+    , 4326
+  )
+)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>PostGIS</h2>
+          <h3>Consultamos la proyección de los campos espaciales</h3>
+          <pre><code data-trim contenteditable>
+select *,
+ST_SRID(the_geom)
+  as geom_srid,
+ST_SRID(the_geom_webmercator)
+  as geom_webmercator_srid
+from test
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Jugando con PostGIS</h2>
+          <h3>Creamos un punto dinámicamente</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+'Obelisco' as nombre,
+ST_Transform(
+  ST_GeomFromText(
+    'POINT(-58.38145 -34.60368)'
+    , 4326
+  )
+  , 3857
+) as the_geom_webmercator
+          </code></pre>
+        </section>
+
+
+        <section>
+          <h2>Jugando con PostGIS</h2>
+          <h3>Creamos un polígono dinámicamente</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+'Mi poligono' as nombre,
+ST_Transform(
+  ST_GeomFromText(
+    'POLYGON((
+      -58.38145 -34.60368,
+      -58.48145 -34.60368,
+      -58.48145 -34.70368,
+      -58.38145 -34.60368
+    ))'
+    , 4326
+  )
+  , 3857
+) as the_geom_webmercator
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Los 150 teatros más cercanos al obelisco</h3>
+          <pre><code data-trim contenteditable>
+select
+  *
+from
+  teatros
+order by
+  ST_Distance(
+    the_geom,
+    ST_GeomFromText(
+      'POINT(-58.38145 -34.60368)'
+      , 4326
+    )
+  )
+limit 150
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>250 metros a la redonda del obelisco</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+ST_Buffer(
+  ST_Transform(
+    ST_GeomFromText(
+      'POINT(-58.38145 -34.60368)'
+      , 4326
+    )
+    , 3857
+  )
+  , 500
+) as the_geom_webmercator
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Entendiendo ST_Buffer</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+ST_Buffer(
+  ST_Transform(
+    ST_GeomFromText('POLYGON((
+      -58.38145 -34.60368, -58.48145 -34.60368, -58.48145 -34.70368, -58.38145 -34.60368
+    ))', 4326)
+    , 3857
+  )
+  , 1500) as the_geom_webmercator
+union
+select
+2 as cartodb_id,
+  ST_Transform(
+    ST_GeomFromText('POLYGON((
+      -58.38145 -34.60368, -58.48145 -34.60368, -58.48145 -34.70368, -58.38145 -34.60368
+    ))', 4326)
+    , 3857
+  ) as the_geom_webmercator
+</code></pre>
+        </section>
+
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Los teatros a 250 metros del obelisco</h3>
+          <pre><code data-trim contenteditable>
+select
+  *
+from
+  teatros
+where
+ST_Within(
+  the_geom_webmercator,
+  ST_Buffer(
+    ST_Transform(
+      ST_GeomFromText(
+        'POINT(-58.38145 -34.60368)'
+        , 4326
+      )
+      , 3857
+    )
+    , 500
+  )
+)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Demo 3</h2>
+          <h3>Creando tus propios mapas</h3>
+          <br />
+          <h3>Vamos a ver...</h3>
+          <ul class="fragment">
+            <li>Crear una zonificación con un mapa en geojson</li>
+            <li>Combinar capas en una misma visualización</li>
+            <li>Combinar tablas en una campo calculado</li>
+            <li>Otra vez un choropleth y...</li>
+            <li class="fragment">si hay más teatros en el norte que en el sur de la ciudad</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Combinando tablas</h3>
+          <h3>Los teatros según nuestras zonas</h3>
+          <pre><code data-trim contenteditable>
+select
+  *,
+  (
+    select count(*)
+    from teatros
+    where ST_Within(teatros.the_geom, caba.the_geom)
+  ) as teatros
+
+from caba
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Demo 4</h2>
+          <h3>Una aplicación completa</h3>
+          <h3>Usando CatoDB como web service</h3>
+          <br />
+          <h3>Vamos a ver...</h3>
+          <ul class="fragment">
+            <li>Acceder a nuestra información vía <a href="https://agendadigital.cartodb.com/api/v2/sql?q=select%20*%20from%20teatros%20limit%205">web service</a></li>
+            <li>Nuestros datos como json</li>
+            <li>Una <a href="http://www.nardoz.com/mapa-cultura">aplicación</a> completa</li>
+            <li>Una consulta compleja</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Una consulta compleja via web service</h3>
+          <pre><code data-trim contenteditable>
+select
+  tipo, subtipo, nombre, direccion, telefono, email, web, lat, lon
+from cultura
+where (
+  ST_Within(
+    the_geom,
+    ST_Envelope(
+      ST_GeomFromText(
+        'LINESTRING(
+          -58.456084263829254 -34.58568073843928,
+          -58.328412043543786 -34.622176987831935
+        )', 4326
+      )
+    )
+  )
+) and (
+  lower(nombre) like '%corrientes%' or lower(direccion) like '%corrientes%'
+) and (
+  lower(subtipo) in ('salas teatrales')
+)
+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>La línea</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+ST_Transform(
+  ST_GeomFromText(
+    'LINESTRING(
+      -58.456084263829254 -34.58568073843928,
+      -58.328412043543786 -34.622176987831935
+    )', 4326
+  )
+  , 3857
+) as the_geom_webmercator
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>El sobre</h3>
+          <pre><code data-trim contenteditable>
+select
+1 as cartodb_id,
+ST_Transform(
+  ST_Envelope(
+    ST_GeomFromText(
+      'LINESTRING(
+        -58.456084263829254 -34.58568073843928,
+        -58.328412043543786 -34.622176987831935
+      )', 4326
+    )
+  )
+  , 3857
+) as the_geom_webmercator
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Magia negra con PostGIS</h2>
+          <h3>Los teatros</h3>
+          <pre><code data-trim contenteditable>
+select
+  *
+from
+  teatros
+where (
+  ST_Within(
+    the_geom,
+    ST_Envelope(
+      ST_GeomFromText(
+        'LINESTRING(
+          -58.456084263829254 -34.58568073843928,
+          -58.328412043543786 -34.622176987831935
+        )', 4326
+      )
+    )
+  )
+) and (
+  lower(nombre) like '%corrientes%' or lower(direccion) like '%corrientes%'
+)
+
+          </code></pre>
+        </section>
+
+
+        <section>
+          <h2>¿Preguntas?</h2>
+        </section>
+
+        <section>
+          <h1>FIN</h1>
+          <p>
+            <small>
+              <a href="http://www.thecoffemaker.com.ar/">TheCoffeMaker</a> / <a href="https://twitter.com/TheCoffeMaker">@TheCoffeMaker</a><br />
+              <a href="http://opensas.wordpress.com/">opensas</a> / <a href="https://twitter.com/develsas">@develsas</a>
+            </small>
+          </p>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Gobierno Abierto y la Apertura de Datos</title>
+    <title>Taller de cartografía de datos</title>
 
-    <meta name="description" content="Gobierno Abierto y la Apertura de Datos">
-    <meta name="author" content="opensas">
+    <meta name="description" content="Taller de cartografía de datos">
+    <meta name="author" content="pollatos,opensas">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -37,12 +37,13 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h2>Gobierno Abierto y la Apertura de Datos</h2>
-          <h4>Fomentando el conocimiento libre en el Estado</h4>
+          <h2>Taller de cartografía de datos</h2>
+          <!-- <h4>Fomentando el conocimiento libre en el Estado</h4> -->
           <p>
             <small>
               Creado por <br />
-              <a href="https://twitter.com/opensas">Sebastián Scarano</a> / <a href="https://twitter.com/opensas">@opensas</a>
+              <a href="https://twitter.com/pollatos">Sergio Sorín</a> / <a href="https://twitter.com/pollatos">@pollatos</a> <br />
+              <a href="https://twitter.com/opensas">Sebastián Scarano</a> / <a href="https://twitter.com/opensas">@opensas</a> <br />
             </small>
           </p>
 <!--
@@ -53,7 +54,10 @@
         </section>
 
         <section>
-          <h2>¿Qué es una política de gobierno abierto?</h2>
+          <h2>
+            ¿Qué es una política de <br/>
+            gobierno abierto?
+          </h2>
 
           <div class="fragment">
             <p>
@@ -97,87 +101,333 @@
           </div>
         </section>
 
-<!--
         <section>
-          <h2>Iniciativas de datos abiertos en el Mundo</h2>
-          <ul>
-            <li>Reino Unido, Estado Unidos, Suecia,  Australia, Alemania, Francia, País Vasco</li>
-            <li>En América Latina: México, Brasil, Chile, Uruguay</li>
-            <li>En Argentina: el gobierno nacional, la ciudad de buenos aires, Bahía Blanca, Misiones</li>
-          </ul>
+          <h2>
+            Diferencia entre <br />
+            dato e información
+          </h2>
+
+          <div class="fragment">
+            <p>
+              El dato debe estar preparado para ser procesado.
+            </p>
+            <br />
+            <ul>
+              <li>Sin procesar, en estado "crudo"</li>
+              <li>No son reportes ni listados</li>
+              <li>Libremente disponible</li>
+              <li>Usando formatos estándares, documentados y libres</li>
+              <li>Lo más próximo al dato original</li>
+              <li>Para ser combinado con otras fuentes de datos</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>
+            Portales de datos
+          </h2>
           <br />
+          <ul>
+            <li>
+              Son plataformas digitales que sirven para almacenar, compartir, conectar y visualizar bases de datos.
+            </li>
+            <li>
+              El estándar de facto: <a target='_blank' href='http://ckan.org/'>CKAN</a>
+            </li>
+            <li>Es software libre y cuenta con una gran comunidad de usuarios en todo el mundo</li>
+            <li>Desarrollado originalmente para el portal de datos del <a href='http://data.gov.uk/data/search'>Reino Unido</a></li>
+            <li>Implementado luego en todo el mundo</li>
+            <li>Como la <a href='http://data.buenosaires.gob.ar/'>Ciudad de Buenos Aires</a>, el <a href='http://datos.argentina.gob.ar/'>Gobierno Nacional</a>, el <a href='https://it.pami.org.ar/?q=dataset'>PAMI</a>, la provincia de <a href='http://www.datos.misiones.gov.ar/dataset'>Misiones</a>, <a href='http://dados.gov.br/dataset'>Brasil</a> y demás lugares</li>
+            <li>Existen otras opciones comerciales, como las utilizadas por el <a href='http://datos.gob.cl/datasets'>gobierno de Chile</a>, el portal de <a href='http://data.lanacion.com.ar/dashboards/4610/indicadores-generales/'>LNData</a> el <a href='http://catalog.data.gov/dataset'>gobierno de EEUU</a> entre otros.</li>
+
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Datasets
+          </h2>
           <br />
           <p>
-            Argentina además se incorporó a la OGP (Alianza de Gobierno Abierto) a fines del 2012, pasando a formar parte de los 58 países miembros que la conforman.
+            Los datasets, o conjuntos de datos, agrupan uno o más recursos de datos así como la documentación que les da contexto.
+          </p>
+          <br />
+          <p>
+            Los recursos son archivos que contienen:
+          </p>
+          <ul>
+            <li>
+              Información tabular (csv, ods, excel)
+            </li>
+            <li>
+              Información con otro tipo de estructura (json, xml)
+            </li>
+            <li>
+              Información geográfica (shape files, geojson, csv + geo, kml)
+            </li>
+            <li>
+              Documentos no estructurados, que ayuden a comprender y utilizar los demás recursos. (pdf, txt, md)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            Metadatos
+          </h2>
+          <br />
+          <p>
+            Los datasets, también tienen asociados un conjunto de metadatos que agregan información acerca del dataset.
+          </p>
+          <p>
+            Algunos ejemplos de metadatos más habituales:
+          </p>
+          <ul>
+            <li>Título</li>
+            <li>Tags o etiquetas</li>
+            <li>Organización</li>
+            <li>Autor</li>
+            <li>Responsable</li>
+            <li>Frecuencia de actualización</li>
+            <li>Granularidad</li>
+            <li>Última actualización</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>
+            APIs - Application programming interface
+          </h3>
+          <br />
+          <ul>
+            <li>
+              Las interfaces para programación de aplicaciones están pensadas para que las aplicaciones se comuniquen entre sí.
+            </li>
+            <li>
+              En vez de descargar un dataset para luego procesarlo, la aplicación utiliza la API para consultar o modificar la información.
+            </li>
+            <li>
+              Se utiliza para acceder en tiempo real a información dinámica, por ejemplo el estado del tráfico, el timeline de twitter, el saldo de mi cuenta bancaria.
+            </li>
+            <li>
+              O cuando no tiene sentido, o resulta imposible, descargar toda la información, por ejemplo: Wikipedia, OpenStreetMap, YouTube.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>
+            Ejemplos de aplicaciones y visualizaciones
+          </h3>
+          <br />
+          <ul>
+            <li>
+              <a href='http://www.asap.org.ar/observatorio/#/poder/PODEJEC?t=info'>Observatorio Presupuestario</a>
+            </li>
+            <li>
+              <a href='http://www.cargografias.org'>Cargografías</a>
+            </li>
+            <li>
+              <a href='http://www.yoquierosaber.org/'>Yo quiero saber - Elecciones 2015</a>
+            </li>
+            <li>
+              <a href='http://www.larutaelectoral.com.ar/#/'>La ruta electoral</a>
+            </li>
+            <li>
+              <a href='http://interactivos.lanacion.com.ar/declaraciones-juradas'>Declaraciones Juradas</a> (<a href='http://vozdata.lanacion.com.ar/'>VozData</a>)
+            </li>
+            <li>
+              <a href='http://votaciones.lanacion.com.ar'>Congresoscopio</a>
+            </li>
+            <li>
+              <a href='http://bost.ocks.org/mike/nations/'>La salud y la riqueza de las naciones</a>
+            </li>
+            <li>
+              <a href='https://github.com/mbostock/d3/wiki/Gallery'>Visualizaciones con D3</a>
+            </li>
+
+
+
+
+          </ul>
+        </section>
+
+        <section>
+          <h3>
+            Sistemas de Información geográfica (GIS)
+          </h3>
+          <p>
+            Sistemas de información que permiten crear, almacenar, editar, analizar y visualizar información geográficamente referenciada.
+          </p>
+          <p>
+            En un sentido más genérico se trata de herramientas que permiten crear consultas interactivas, analizar información espacial, editar datos y mapas, y visualizar los resultados de estas operaciones.
           </p>
         </section>
- -->
+
         <section>
-          <h2>¿Cómo empiezo?</h2>
-          <ul>
-            <li class="fragment">Recurrir a <b>la comunidad</b> para interiorizarse en el tema y recibir capacitación.</li>
-            <li class="fragment">Evacuar las <b>dudas y temores</b> lo antes posible</li>
-            <li class="fragment">Comprender que un <b>dato abierto no es un informe ni un reporte</b></li>
-            <li class="fragment">Que sean <b>datos "crudos"</b> con el <b>máximo nivel de desagregación</b> posible</li>
-            <li class="fragment">Involucrar desde un principio a los <b>productores de los datos</b></li>
-            <li class="fragment">Empezar con algo <b>simple, pequeño</b> y que resulte <b>atractivo</b></li>
-            <li class="fragment">No empezar con <b>información controvertida</b></li>
-          </ul>
+          <h4>
+            Un ejemplo famoso
+          </h4>
+          <p style="font-size:0.7em">
+            En 1854 el pionero de la epidemiología, el Dr. John Snow cartografió la incidencia de los casos de cólera en el distrito de Soho en Londres. Utilizando métodos cartográficos, no solo representaba la realidad, sino que por primera vez analizaba conjuntos de fenómenos geográficos dependientes.
+          </p>
+          <a class="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/643px-Snow-cholera-map-1.jpg" target="_blank">
+            <img height="500" src="images/snow_colera_map.jpg" alt="El mapa de John Snow">
+          </a>
+
         </section>
 
         <section>
-          <h2>¿Cómo empiezo? (cont...)</h2>
-          <ul>
-          <li class="fragment">Usar <b>formatos abiertos</b> - csv, geojson</li>
-          <li class="fragment"><b>Depurar la información</b> - herramientas libres: OpenRefine, LibreOffice</li>
-          <li class="fragment">Publicar los datos en un <b>portal de datos</b> - herramienta libre: CKAN</li>
-          <li class="fragment">Organizar y participar de <b>eventos</b>: talleres, capacitaciones, hackathones - herramienta libre: hackdash</li>
-          <li class="fragment">Publicar las visualizaciones, aplicaciones y demás como <b>software libre</b></li>
-          <li class="fragment">Conformar un equipo de <b>datos abiertos</b></li>
-          <li class="fragment">Convocar a los <b>usuarios finales</b> y a los <b>intermediarios</b></li>
-          <li class="fragment">Colaborar y escuchar a la <b>comunidad</b> - herramienta: github</li>
-          </ul>
+          <h4>
+            ¿Cómo se representa la información geográfica?
+          </h4>
+          <br />
+          <p>
+            <b><a href='https://es.wikipedia.org/wiki/Coordenadas_geogr%C3%A1ficas'>Coordenadas geográficas</a></b>: sistema de referencia que utiliza dos coordenadas angulares, latitud (Norte y Sur) y longitud (Este y Oeste) medidas desde el centro de la Tierra. Forman parte de un sistema de coordenadas geográficas que incluye un datum, meridiano principal y unidad angular.
+          </p>
+
+          <br />
+          <p>
+            <b><a href='https://es.wikipedia.org/wiki/Proyecci%C3%B3n_cartogr%C3%A1fica'>Coordenadas proyectadas</a></b>: sistema de representación que establece una relación entre los puntos de la superficie curva de la tierra (coordenadas geográficas) y los de una superficie plana (mapa). Los puntos se identifican por coordenadas cartesianas (x e y) que se obtienen matemáticamente a partir de las coordenadas geográficas (latitud y longitud).
+          </p>
+
+          <br />
+          <p>
+            El sistema de coordenadas más común es el <a href='https://es.wikipedia.org/wiki/WGS84'>WGS 84</a>
+          </p>
+
         </section>
 
         <section>
-          <h2>Recapitulando</h2>
+          <h3>
+            Formatos de archivos <br />
+            con información geográfica
+          </h3>
+          <br />
           <ul>
-
-            <li class="fragment">Los organismos públicos de todo el mundo están adoptando políticas de datos abiertos</li>
-            <li class="fragment">Las herramientas para hacerlo son libres y de amplio uso</li>
-            <li class="fragment">Los formatos son simples y seguramente ya cuentan con personal capacitado</li>
-            <li class="fragment">Hay gran cantidad de experiencias en América Latina y en nuestro país</li>
-            <li class="fragment">Existe una importante comunidad dispuesta a asesorarlos y capacitarlos</li>
+            <li>csv con coordenadas (lat, long)</li>
+            <li>csv con polígonos</li>
+            <li><a href='https://en.wikipedia.org/wiki/Shapefile'>shape files</a></li>
+            <li><a href='https://en.wikipedia.org/wiki/GeoJSON'>geojson</a> </li>
+            <li><a href='https://en.wikipedia.org/wiki/Keyhole_Markup_Language'>kml</a></li>
           </ul>
+
           <br />
           <br />
-          <h3 class="fragment">Conclusión:</h3>
-          <h2 class="fragment">Llegó el momento de abrir los datos.</h2>
+          <p style='font-size:0.7em'>
+            <b>Tip</b>: Para jugar interactivamente con estos formatos: <a href='http://geojson.io/'>geojson.io</a>
+          </p>
+        </section>
+
+        <section>
+          <h3>Ejemplos: Mapas electorales</h3>
+          <ul>
+            <li><a href='http://www.lanacion.com.ar/1818264-elecciones-2015-paso-mapas'>Primarias Presidenciales 2015 (La Nación)</a></li>
+            <li><a href='http://paso2015.andytow.com/'>Primarias Presidenciales 2015 (Andy Tow)</a></li>
+            <li><a href='http://elecciones.andytow.com/'>Cartograma electoral (Andy Tow)</a></li>
+            <li><a href='http://elections.huffingtonpost.com/2012/custom-presidential-election-map#nlavvnjanwsujensw'>Huffigton Post Election Dashboard</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejemplos: Aplicaciones</h3>
+          <ul>
+            <li><a href='https://mapa.buenosaires.gob.ar'>Mapa Interactivo de Buenos Aires</a></li>
+            <li><a href='https://www.openstreetmap.org'>OopenStreetMap</a></li>
+            <li><a href='https://www.google.com.ar/maps'>Google Maps</a></li>
+            <li><a href='http://www.nardoz.com/mapa-cultura'>Mapa Cultural</a></li>
+            <li><a href='http://archivodecasos.com.ar/archivo/mapa/'>Mapa de Correpi</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejemplos: la dimensión temporal</h3>
+          <ul>
+            <li><a href='https://viz2.cartodb.com/viz/70bc854e-68fc-11e3-8e22-0e49973114de/public_map'>Creación de oficinas de Correo en EEUU</a></li>
+            <li><a href='http://www.theguardian.com/news/datablog/interactive/2012/oct/01/first-world-war-royal-navy-ships-mapped
+'>Flota inglesa en la Primera Guerra Mundial</a></li>
+            <li><a href='http://www.nytimes.com/interactive/2011/04/28/us/tornado-deaths.html?_r=0'>Muertes por tornados en EEUU en el último medio siglo</a></li>
+            <li><a href='http://www.nardoz.com/HotelViz/'>HotelViz</a></li>
+            <li><a href='http://www.therefugeeproject.org'>El proyecto refugiados</a></li>
+            <li><a href='http://flowingdata.com/2009/01/08/animated-map-shows-one-year-of-edits-to-openstreetmap/'>Ediciones de OpenStreetMap de 2008</a></li>
+            <li><a href='http://www.nytimes.com/newsgraphics/2013/08/18/reshaping-new-york/'>Reshaping New York</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Otros ejemplos</h3>
+          <ul>
+            <li><a href='http://opensas.cartodb.com/viz/7eac5748-38ad-11e4-bce0-0e10bcd91c2b/public_map'>Votos en la ONU por la creación de un marco legal para la reestructuración de deuda</a></li>
+            <li><a href='http://pami.cartodb.com/viz/79ce56fc-6d0c-11e4-b9e4-0e018d66dc29/public_map'>Cantidad de farmacias por habitantes en condiciones de jubilarse</a></li>
+            <li><a href='http://blog.jazzido.com/indicadoresEducativosAR/#abandono/egb_1/2003'>Indicadores educativos</a></li>
+            <li><a href='http://th-mayer.de/cartogram/#population'>Cartograma</a></li>
+            <li><a href='http://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house'>Where can you afford to buy a house?</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejercicio 1</h3>
+
+          <ol>
+            <li>Ir al sitio de <a href='http://cartodb.com/'>CartoDB</a> y crear una nueva cuenta de usuario (<a href='https://cartodb.com/signup'>Sign up</a>).</li>
+            <li>Descargar el datasets de <a href='http://data.buenosaires.gob.ar/dataset/cajeros-automaticos'>Cajeros automáticos</a> (csv) del portal de datos de la Ciudad de Buenos Aires
+            </li>
+            <li>Importarlos a CartoDB</li>
+            <li>Crear un mapa de tipo Cluster</li>
+            <li>Crear un mapa de tipo Bubble según la cantidad de terminales</li>
+            <li>Crear un mapa de tipo Category según la red (Banelco/Link)</li>
+            <li>Probar los mapas de tipo Heatmap, Intensity y Density</li>
+          </ol>
 
         </section>
 
         <section>
-          <h5>Un ejemplo: <i>Pami Presente</i> en el Hackathon de Salud</h5>
-          <a class="image" href="http://opensas.github.io/mapa-pami" target="_blank">
-            <img width="533" height="600" src="images/mapa_pami.png" alt="Pami Presente">
-          </a>
-          &nbsp;&nbsp;
-          <a class="image" href="http://cdb.io/1x6FbnC" target="_blank">
-            <img width="349" height="600" src="images/mapa_farmacias.png" alt="Pami Presente">
-          </a>
+          <h3>Ejercicio 2</h3>
+
+          <ol>
+            <li>Descargar los datasets de
+            <a href='http://data.buenosaires.gob.ar/dataset/barrios'>Barrios</a> (csv) y
+<a href='http://data.buenosaires.gob.ar/dataset/comunas'>Comunas</a> (csv)
+            del portal de datos de la Ciudad de Buenos Aires
+            </li>
+            <li>Importarlos a CartoDB</li>
+            <li>Crear un mapa de tipo <a href='https://en.wikipedia.org/wiki/Choropleth_map'>Choropleth</a> de barrios por cantidad de cajeros automáticos y otro serǵun las comunas.</li>
+            <li>La siguiente consulta te servirá para calcular la cantidad de cajeros por cada barrio / comuna:
+          <pre><code data-trim contenteditable>
+SELECT
+  *,
+  ( select count(*) from cajeros as c
+    where st_within(c.the_geom, b.the_geom)
+  ) as cajeros
+FROM
+  barrios as b
+          </code></pre>
+
+            </li>
+          </ol>
+
+
         </section>
 
         <section>
-          <h5>Otro ejemplo: <i>Votación en la ONU</i></h5>
-          <a class="image" href="http://cdb.io/1qDJC6L" target="_blank">
-            <img src="images/mapa_onu.png" alt="Votos en la ONU por la creación de un marco legal para la reestructuración de deuda">
-          </a>
+          <h3>Ejercicio 3</h3>
+
+          <ol>
+            <li>Descargar el dataset con <a href='data/censo/comunas_censo_2010.csv'>Información del censo 2010 de las comunas de Capital Federal</a>
+            </li>
+            <li>Importarlo a CartoDB</li>
+            <li>Explorar la información</li>
+            <li>Crear diversos mapas</li>
+          </ol>
+
         </section>
 
         <section>
           <h3>Muchas gracias</h3>
           <p>
             <small>
+              <a href="https://twitter.com/pollatos">Sergio Sorín</a> / <a href="https://twitter.com/pollatos">@pollatos</a> <br />
               <a href="https://twitter.com/opensas">Sebastián Scarano</a> / <a href="https://twitter.com/opensas">@opensas</a>
             </small>
           </p>

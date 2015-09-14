@@ -649,31 +649,78 @@
             </p>
           </section>
 
+
+
+
           <section>
 
             <h2>Servicio Web</h2>
-            <h4>
+            <p>
               Es un sistema que corre en la web y que permite intercambiar datos entre aplicaciones.
-            </h4>
+            </p>
             <br />
 
             <div class='fragment'>
 
               <h2>REST</h2>
-              <h4>
+              <p>
                 Es un estilo de servicio web que busca aprovechar la infraestructura de internet y permitir intercambiar información de una manera simple
-              </h4>
+              </p>
               <br />
 
               <div class='fragment'>
 
                 <h3>JSON - JavaScript Object Notation</h3>
-                <h4>
+                <p>
                   Es un formato liviano para el intercambio de datos. Todo objeto JSON es a su vez un objeto válido en JavaScript, lo que hace que trabajar con él sea muy fácil.
-                </h4>
+                </p>
 
               </div>
 
+            </div>
+          </section>
+
+          <section>
+            <h2>UI versus API: Un ejemplo</h2>
+          </section>
+
+          <section style='font-size:0.8em'>
+            <h2>UI: User Interface</h2>
+
+            <div class='fragment'>
+                <a href='https://www.openstreetmap.org/node/2227550793#map=16/-34.6034/-58.3732'>
+                  <img src='images/openrefine/openstreetmap_ui.png' style='border:0px'/>
+                </a>
+
+              <div class='fragment'>
+                <ul>
+                  <li>Interface pensada para seres humanos</li>
+                  <li>Es la manera en que un usuario puede interactuar con un sistema</li>
+                  <li>Las aplicaciones web tienen una UI</li>
+                  <li>Recibe información por botones, cajas de texto</li>
+                  <li>...y retorna un mapa en pantalla</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section style='font-size:0.8em'>
+            <h2>API: Application Programming Interface</h2>
+
+            <div class='fragment'>
+              <a href='http://open.mapquestapi.com/nominatim/v1/search.php?format=json&q=Av.%20Corrientes%20456,%20Ciudad%20de%20Buenos%20Aires,%20Argentina'>
+                <img src='images/openrefine/openstreetmap_api.png' style='border:0px'/>
+              </a>
+
+              <div class='fragment'>
+                <ul>
+                  <li>Interface pensada para programas</li>
+                  <li>Es la manera en que las aplicaciones se pueden comunicar entre sí</li>
+                  <li>Un servicio web es una API</li>
+                  <li>Recibe información a través de la URL</li>
+                  <li>...y retorna JSON</li>
+                </ul>
+              </div>
             </div>
           </section>
 
@@ -721,7 +768,7 @@
               Tomando el ejemplo del resultado de consultar la API de DuckDuckGo, recorrereremos el JSON devuelto utilizando JavaScript.
             </p>
             <p>
-              Abrir un explorador web (Firefox o Chrome), apretar F12 para abrir la consola JavaScript, y pegar el siguente texto:
+              Abrir un explorador web (Firefox o Chrome), apretar F12 para abrir la consola JavaScript, y pegar el siguiente texto:
             </p>
 
             <pre><code data-trim contenteditable>

@@ -25,7 +25,7 @@ https://github.com/OpenRefine/OpenRefine/wiki/GREL-Functions
 
 ## Ejercicio 1
 
-Tomar el archivo data/01_juntas_discapacidad.csv
+Tomar el archivo [data/01_juntas_discapacidad.csv](http://opensas.github.io/cartografias/openrefine/data/01_juntas_discapacidad.csv)
 
 Generar un archivo separado por comas con las siguiente estuctura
 
@@ -51,7 +51,7 @@ Nota: la solución del ejercicio está en el archivo [ejercicio01.md](ejercicio0
 
 ## Ejercicio 2
 
-Tomar el archivo data/02_personas.csv
+Tomar el archivo [data/02_personas.csv](http://opensas.github.io/cartografias/openrefine/data/02_personas.csv)
 
 Generar un archivo separado por comas con las siguiente estuctura
 

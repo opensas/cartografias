@@ -37,9 +37,27 @@ var resultados = {
 
 Acabamos de declarar una variable llamada 'resultados' con el objeto json devuelto por la consulta de DuckDuckGo.
 
+4. Consultar el Heading
+
 ```
-resultados.Heading                               // el Heading
-resultados.RelatedTopics[0].Icon.URL             // url del ícono del primer resultado
-resultados.RelatedTopics[2].Icon.URL             // url del ícono del último resultado
-resultados.RelatedTopics[2].length               // la cantidad de resultados retornados por la consulta
+resultados.Heading
 ```
+
+5. Consultar el url del ícono del primer resultado
+
+```
+resultados.RelatedTopics[0].Icon.URL
+```
+
+6. Consultar el url del ícono del último resultado
+
+```
+resultados.RelatedTopics[2].Icon.URL
+```
+
+7. Consultar el la cantidad de resultados retornados por la consulta
+
+```
+resultados.RelatedTopics[2].length
+```
+

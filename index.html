@@ -57,7 +57,6 @@
 
         <section> <!-- Introducción a Datos Abiertos y CartoDB -->
 
-
           <section>
             <h2>Primer encuentro</h2>
             <br />
@@ -808,9 +807,57 @@ var resultados = {
               Nota: la solución del ejercicio está <a href="http://github.com/opensas/cartografias/blob/gh-pages/openrefine/ejercicio_json.md">aquí</a>
             </p>
 
-
           </section>
 
+          <section>
+            <h3>Servicios para geocodificar</h3>
+            <h2>Nominatim</h2>
+
+            <ul>
+              <li>Es el web service que utiliza OpenStreetMap</li>
+              <li>Es Software Libre</li>
+              <li>Colaborativo - Wiki Maps</li>
+              <li>Sin límites de uso</li>
+              <li>Respeta tu privacidad</li>
+              <li>Todavía no es tan preciso (pero podés ayudar a mejorarlo)</li>
+<li>Un ejemplo: <a href='http://open.mapquestapi.com/nominatim/v1/search.php?format=json&q=Av.%20Corrientes%20456,%20Ciudad%20de%20Buenos%20Aires,%20Argentina'>http://open.mapquestapi.com/nominatim/v1/search.php?format=json&q=Av. Corrientes 456, Ciudad de Buenos Aires, Argentina</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Servicios para geocodificar</h3>
+            <h2>Google Maps API</h2>
+
+            <ul>
+              <li>Es el web service que utiliza Google Maps</li>
+              <li>Es Software Privativo</li>
+              <li>No Colaborativo</li>
+              <li>Límites de uso de la API</li>
+              <li>Respeta los intereses de la NSA</li>
+              <li>Suele brindar mejores resultados (por ahora)</li>
+<li>Un ejemplo: <a href='http://maps.googleapis.com/maps/api/geocode/json?address=Av. Corrientes 456, Ciudad Autónoma de Buenos Aires, Argentina'>http://maps.googleapis.com/maps/api/geocode/json?address=Av. Corrientes 456, Ciudad Autónoma de Buenos Aires, Argentina</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <p>Ahora sí...</p>
+
+            <div class='fragment'>
+              <h2>Geocodificando con OpenRefine</h2>
+
+              <div class='fragment'>
+                <ul>
+                  <li>Construimos una columna con la dirección a geocodificar</li>
+                  <li>Creamos una columna con el resultado de llamar al web service para cada fila (Add column by fetching URLs...)</li>
+                  <li>Parseamos el resultado de la llamada al web service con value.parseJson()</li>
+                  <li>Atendemos los casos en los que no retornó ningún valor</li>
+                  <li>Extraemos las columnas lat y long del resultado</li>
+                  <li>Comparamos los diversos resultados</li>
+                  <li>Exportamos el resultado</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
       </div>
 

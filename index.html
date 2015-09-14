@@ -36,6 +36,7 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
+
         <section>
           <h2>Taller de cartografía de datos</h2>
           <!-- <h4>Fomentando el conocimiento libre en el Estado</h4> -->
@@ -53,387 +54,716 @@
  -->
         </section>
 
-        <section>
-          <h2>
-            ¿Qué es una política de <br/>
-            gobierno abierto?
-          </h2>
 
-          <div class="fragment">
-            <p>
-              Doctrina política que sostiene que los temas de gobierno y administración pública deben ser abiertos a todos los niveles posibles.
-            </p>
+        <section> <!-- Introducción a Datos Abiertos y CartoDB -->
+
+
+          <section>
+            <h2>Primer encuentro</h2>
             <br />
-            <p>
-              Se basa en tres ejes:
-            </p>
-            <ul>
-              <li><b>Transparencia</b></li>
-              <li><b>Colaboración</b></li>
-              <li><b>Participación</b></li>
-            </ul>
-          </div>
-        </section>
+            <h3>Introducción a Datos Abiertos y CartoDB</h3>
+            <br /><br />
+            <div class="fragment">
+              <h3>Agenda:</h3>
+              <ul>
+                <li>Gobierno Abierto y Datos Abiertos</li>
+                <li>Diferencia entre dato e información</li>
+                <li>Datasets, metadatos, portales de datos</li>
+                <li>APIs - Application programming interface</li>
+                <li>Sistemas de Información Geográficas (GIS)</li>
+                <li>Sistemas de coordenadas</li>
+                <li>Formatos más comunes</li>
+                <li>Visualizaciones de ejemplos</li>
+                <li>Primeros pasos con CartoDB</li>
+              </ul>
+            </div>
 
-        <section>
-          <h2>¿Qué es una política de datos abiertos?</h2>
+          </section>
 
-          <div class="fragment">
-            <p>
-              Es una parte de una estrategia de Gobierno Abierto.
-            </p>
-            <br />
-            <p>
-              <b>Definición</b>: el conocimiento es abierto si <b>cualquiera</b> es libre de:
-            </p>
-            <ul>
-              <li>acceder a él</li>
-              <li>usarlo</li>
-              <li>modificarlo</li>
-              <li>y compartirlo</li>
-              <li>sujeto, a lo sumo, a las medidas que preserven su autoría y apertura.</li>
-            </ul>
-            <br />
-            <br />
-            <p>
-              Esta definición está basada en el concepto de software libre.
-            </p>
-          </div>
-        </section>
-
-        <section>
-          <h2>
-            Diferencia entre <br />
-            dato e información
-          </h2>
-
-          <div class="fragment">
-            <p>
-              El dato debe estar preparado para ser procesado.
-            </p>
-            <br />
-            <ul>
-              <li>Sin procesar, en estado "crudo"</li>
-              <li>No son reportes ni listados</li>
-              <li>Libremente disponible</li>
-              <li>Usando formatos estándares, documentados y libres</li>
-              <li>Lo más próximo al dato original</li>
-              <li>Para ser combinado con otras fuentes de datos</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2>
-            Portales de datos
-          </h2>
-          <br />
-          <ul>
-            <li>
-              Son plataformas digitales que sirven para almacenar, compartir, conectar y visualizar bases de datos.
-            </li>
-            <li>
-              El estándar de facto: <a target='_blank' href='http://ckan.org/'>CKAN</a>
-            </li>
-            <li>Es software libre y cuenta con una gran comunidad de usuarios en todo el mundo</li>
-            <li>Desarrollado originalmente para el portal de datos del <a href='http://data.gov.uk/data/search'>Reino Unido</a></li>
-            <li>Implementado luego en todo el mundo</li>
-            <li>Como la <a href='http://data.buenosaires.gob.ar/'>Ciudad de Buenos Aires</a>, el <a href='http://datos.argentina.gob.ar/'>Gobierno Nacional</a>, el <a href='https://it.pami.org.ar/?q=dataset'>PAMI</a>, la provincia de <a href='http://www.datos.misiones.gov.ar/dataset'>Misiones</a>, <a href='http://dados.gov.br/dataset'>Brasil</a> y demás lugares</li>
-            <li>Existen otras opciones comerciales, como las utilizadas por el <a href='http://datos.gob.cl/datasets'>gobierno de Chile</a>, el portal de <a href='http://data.lanacion.com.ar/dashboards/4610/indicadores-generales/'>LNData</a> el <a href='http://catalog.data.gov/dataset'>gobierno de EEUU</a> entre otros.</li>
-
-          </ul>
-        </section>
-
-        <section>
-          <h2>
-            Datasets
-          </h2>
-          <br />
-          <p>
-            Los datasets, o conjuntos de datos, agrupan uno o más recursos de datos así como la documentación que les da contexto.
-          </p>
-          <br />
-          <p>
-            Los recursos son archivos que contienen:
-          </p>
-          <ul>
-            <li>
-              Información tabular (csv, ods, excel)
-            </li>
-            <li>
-              Información con otro tipo de estructura (json, xml)
-            </li>
-            <li>
-              Información geográfica (shape files, geojson, csv + geo, kml)
-            </li>
-            <li>
-              Documentos no estructurados, que ayuden a comprender y utilizar los demás recursos. (pdf, txt, md)
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>
-            Metadatos
-          </h2>
-          <br />
-          <p>
-            Los datasets, también tienen asociados un conjunto de metadatos que agregan información acerca del dataset.
-          </p>
-          <p>
-            Algunos ejemplos de metadatos más habituales:
-          </p>
-          <ul>
-            <li>Título</li>
-            <li>Tags o etiquetas</li>
-            <li>Organización</li>
-            <li>Autor</li>
-            <li>Responsable</li>
-            <li>Frecuencia de actualización</li>
-            <li>Granularidad</li>
-            <li>Última actualización</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>
-            APIs - Application programming interface
-          </h3>
-          <br />
-          <ul>
-            <li>
-              Las interfaces para programación de aplicaciones están pensadas para que las aplicaciones se comuniquen entre sí.
-            </li>
-            <li>
-              En vez de descargar un dataset para luego procesarlo, la aplicación utiliza la API para consultar o modificar la información.
-            </li>
-            <li>
-              Se utiliza para acceder en tiempo real a información dinámica, por ejemplo el estado del tráfico, el timeline de twitter, el saldo de mi cuenta bancaria.
-            </li>
-            <li>
-              O cuando no tiene sentido, o resulta imposible, descargar toda la información, por ejemplo: Wikipedia, OpenStreetMap, YouTube.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>
-            Ejemplos de aplicaciones y visualizaciones
-          </h3>
-          <br />
-          <ul>
-            <li>
-              <a href='http://www.asap.org.ar/observatorio/#/poder/PODEJEC?t=info'>Observatorio Presupuestario</a>
-            </li>
-            <li>
-              <a href='http://www.cargografias.org'>Cargografías</a>
-            </li>
-            <li>
-              <a href='http://www.yoquierosaber.org/'>Yo quiero saber - Elecciones 2015</a>
-            </li>
-            <li>
-              <a href='http://www.larutaelectoral.com.ar/#/'>La ruta electoral</a>
-            </li>
-            <li>
-              <a href='http://interactivos.lanacion.com.ar/declaraciones-juradas'>Declaraciones Juradas</a> (<a href='http://vozdata.lanacion.com.ar/'>VozData</a>)
-            </li>
-            <li>
-              <a href='http://votaciones.lanacion.com.ar'>Congresoscopio</a>
-            </li>
-            <li>
-              <a href='http://bost.ocks.org/mike/nations/'>La salud y la riqueza de las naciones</a>
-            </li>
-            <li>
-              <a href='https://github.com/mbostock/d3/wiki/Gallery'>Visualizaciones con D3</a>
-            </li>
-
-
-
-
-          </ul>
-        </section>
-
-        <section>
-          <h3>
-            Sistemas de Información geográfica (GIS)
-          </h3>
-          <p>
-            Sistemas de información que permiten crear, almacenar, editar, analizar y visualizar información geográficamente referenciada.
-          </p>
-          <p>
-            En un sentido más genérico se trata de herramientas que permiten crear consultas interactivas, analizar información espacial, editar datos y mapas, y visualizar los resultados de estas operaciones.
-          </p>
-        </section>
-
-        <section>
-          <h4>
-            Un ejemplo famoso
-          </h4>
-          <p style="font-size:0.7em">
-            En 1854 el pionero de la epidemiología, el Dr. John Snow cartografió la incidencia de los casos de cólera en el distrito de Soho en Londres. Utilizando métodos cartográficos, no solo representaba la realidad, sino que por primera vez analizaba conjuntos de fenómenos geográficos dependientes.
-          </p>
-          <a class="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/643px-Snow-cholera-map-1.jpg" target="_blank">
-            <img height="500" src="images/snow_colera_map.jpg" alt="El mapa de John Snow">
+<!--
+          <a class="image" href="https://okfn.org/" target="_blank">
+            <img width="200px" height="50px" src="images/logo03.png" alt="Pami Presente">
           </a>
+ -->
 
-        </section>
+          <section>
+            <h2>
+              ¿Qué es una política de <br/>
+              gobierno abierto?
+            </h2>
 
-        <section>
-          <h4>
-            ¿Cómo se representa la información geográfica?
-          </h4>
-          <br />
-          <p>
-            <b><a href='https://es.wikipedia.org/wiki/Coordenadas_geogr%C3%A1ficas'>Coordenadas geográficas</a></b>: sistema de referencia que utiliza dos coordenadas angulares, latitud (Norte y Sur) y longitud (Este y Oeste) medidas desde el centro de la Tierra. Forman parte de un sistema de coordenadas geográficas que incluye un datum, meridiano principal y unidad angular.
-          </p>
+            <div class="fragment">
+              <p>
+                Doctrina política que sostiene que los temas de gobierno y administración pública deben ser abiertos a todos los niveles posibles.
+              </p>
+              <br />
+              <p>
+                Se basa en tres ejes:
+              </p>
+              <ul>
+                <li><b>Transparencia</b></li>
+                <li><b>Colaboración</b></li>
+                <li><b>Participación</b></li>
+              </ul>
+            </div>
+          </section>
 
-          <br />
-          <p>
-            <b><a href='https://es.wikipedia.org/wiki/Proyecci%C3%B3n_cartogr%C3%A1fica'>Coordenadas proyectadas</a></b>: sistema de representación que establece una relación entre los puntos de la superficie curva de la tierra (coordenadas geográficas) y los de una superficie plana (mapa). Los puntos se identifican por coordenadas cartesianas (x e y) que se obtienen matemáticamente a partir de las coordenadas geográficas (latitud y longitud).
-          </p>
+          <section>
+            <h2>¿Qué es una política de datos abiertos?</h2>
 
-          <br />
-          <p>
-            El sistema de coordenadas más común es el <a href='https://es.wikipedia.org/wiki/WGS84'>WGS 84</a>
-          </p>
+            <div class="fragment">
+              <p>
+                Es una parte de una estrategia de Gobierno Abierto.
+              </p>
+              <br />
+              <p>
+                <b>Definición</b>: el conocimiento es abierto si <b>cualquiera</b> es libre de:
+              </p>
+              <ul>
+                <li>acceder a él</li>
+                <li>usarlo</li>
+                <li>modificarlo</li>
+                <li>y compartirlo</li>
+                <li>sujeto, a lo sumo, a las medidas que preserven su autoría y apertura.</li>
+              </ul>
+              <br />
+              <br />
+              <p>
+                Esta definición está basada en el concepto de software libre.
+              </p>
+            </div>
+          </section>
 
-        </section>
+          <section>
+            <h2>
+              Diferencia entre <br />
+              dato e información
+            </h2>
 
-        <section>
-          <h3>
-            Formatos de archivos <br />
-            con información geográfica
-          </h3>
-          <br />
-          <ul>
-            <li>csv con coordenadas (lat, long)</li>
-            <li>csv con polígonos</li>
-            <li><a href='https://en.wikipedia.org/wiki/Shapefile'>shape files</a></li>
-            <li><a href='https://en.wikipedia.org/wiki/GeoJSON'>geojson</a> </li>
-            <li><a href='https://en.wikipedia.org/wiki/Keyhole_Markup_Language'>kml</a></li>
-          </ul>
+            <div class="fragment">
+              <p>
+                El dato debe estar preparado para ser procesado.
+              </p>
+              <br />
+              <ul>
+                <li>Sin procesar, en estado "crudo"</li>
+                <li>No son reportes ni listados</li>
+                <li>Libremente disponible</li>
+                <li>Usando formatos estándares, documentados y libres</li>
+                <li>Lo más próximo al dato original</li>
+                <li>Para ser combinado con otras fuentes de datos</li>
+              </ul>
+            </div>
+          </section>
 
-          <br />
-          <br />
-          <p style='font-size:0.7em'>
-            <b>Tip</b>: Para jugar interactivamente con estos formatos: <a href='http://geojson.io/'>geojson.io</a>
-          </p>
-        </section>
+          <section>
+            <h2>
+              Portales de datos
+            </h2>
+            <br />
+            <ul>
+              <li>
+                Son plataformas digitales que sirven para almacenar, compartir, conectar y visualizar bases de datos.
+              </li>
+              <li>
+                El estándar de facto: <a target='_blank' href='http://ckan.org/'>CKAN</a>
+              </li>
+              <li>Es software libre y cuenta con una gran comunidad de usuarios en todo el mundo</li>
+              <li>Desarrollado originalmente para el portal de datos del <a href='http://data.gov.uk/data/search'>Reino Unido</a></li>
+              <li>Implementado luego en todo el mundo</li>
+              <li>Como la <a href='http://data.buenosaires.gob.ar/'>Ciudad de Buenos Aires</a>, el <a href='http://datos.argentina.gob.ar/'>Gobierno Nacional</a>, el <a href='https://it.pami.org.ar/?q=dataset'>PAMI</a>, la provincia de <a href='http://www.datos.misiones.gov.ar/dataset'>Misiones</a>, <a href='http://dados.gov.br/dataset'>Brasil</a> y demás lugares</li>
+              <li>Existen otras opciones comerciales, como las utilizadas por el <a href='http://datos.gob.cl/datasets'>gobierno de Chile</a>, el portal de <a href='http://data.lanacion.com.ar/dashboards/4610/indicadores-generales/'>LNData</a> el <a href='http://catalog.data.gov/dataset'>gobierno de EEUU</a> entre otros.</li>
 
-        <section>
-          <h3>Ejemplos: Mapas electorales</h3>
-          <ul>
-            <li><a href='http://www.lanacion.com.ar/1818264-elecciones-2015-paso-mapas'>Primarias Presidenciales 2015 (La Nación)</a></li>
-            <li><a href='http://paso2015.andytow.com/'>Primarias Presidenciales 2015 (Andy Tow)</a></li>
-            <li><a href='http://elecciones.andytow.com/'>Cartograma electoral (Andy Tow)</a></li>
-            <li><a href='http://elections.huffingtonpost.com/2012/custom-presidential-election-map#nlavvnjanwsujensw'>Huffigton Post Election Dashboard</a></li>
-          </ul>
-        </section>
+            </ul>
+          </section>
 
-        <section>
-          <h3>Ejemplos: Aplicaciones</h3>
-          <ul>
-            <li><a href='https://mapa.buenosaires.gob.ar'>Mapa Interactivo de Buenos Aires</a></li>
-            <li><a href='https://www.openstreetmap.org'>OpenStreetMap</a></li>
-            <li><a href='https://www.google.com.ar/maps'>Google Maps</a></li>
-            <li><a href='http://www.nardoz.com/mapa-cultura'>Mapa Cultural</a></li>
-            <li><a href='http://archivodecasos.com.ar/archivo/mapa/'>Mapa de Correpi</a></li>
-          </ul>
-        </section>
+          <section>
+            <h2>
+              Datasets
+            </h2>
+            <br />
+            <p>
+              Los datasets, o conjuntos de datos, agrupan uno o más recursos de datos así como la documentación que les da contexto.
+            </p>
+            <br />
+            <p>
+              Los recursos son archivos que contienen:
+            </p>
+            <ul>
+              <li>
+                Información tabular (csv, ods, excel)
+              </li>
+              <li>
+                Información con otro tipo de estructura (json, xml)
+              </li>
+              <li>
+                Información geográfica (shape files, geojson, csv + geo, kml)
+              </li>
+              <li>
+                Documentos no estructurados, que ayuden a comprender y utilizar los demás recursos. (pdf, txt, md)
+              </li>
+            </ul>
+          </section>
 
-        <section>
-          <h3>Ejemplos: la dimensión temporal</h3>
-          <ul>
-            <li><a href='https://viz2.cartodb.com/viz/70bc854e-68fc-11e3-8e22-0e49973114de/public_map'>Creación de oficinas de Correo en EEUU</a></li>
-            <li><a href='http://www.theguardian.com/news/datablog/interactive/2012/oct/01/first-world-war-royal-navy-ships-mapped
-'>Flota inglesa en la Primera Guerra Mundial</a></li>
-            <li><a href='http://www.nytimes.com/interactive/2011/04/28/us/tornado-deaths.html?_r=0'>Muertes por tornados en EEUU en el último medio siglo</a></li>
-            <li><a href='http://www.nardoz.com/HotelViz/'>HotelViz</a></li>
-            <li><a href='http://www.therefugeeproject.org'>El proyecto refugiados</a></li>
-            <li><a href='http://flowingdata.com/2009/01/08/animated-map-shows-one-year-of-edits-to-openstreetmap/'>Ediciones de OpenStreetMap de 2008</a></li>
-            <li><a href='http://knightlab.northwestern.edu/2014/04/04/storymapjs-gigapixel-tool-follows-game-of-thrones-adventure/'>StoryMapJS - Game of Thrones</a></li>
-            <li><a href='http://www.nytimes.com/newsgraphics/2013/08/18/reshaping-new-york/'>Reshaping New York</a></li>
-          </ul>
-        </section>
+          <section>
+            <h2>
+              Metadatos
+            </h2>
+            <br />
+            <p>
+              Los datasets, también tienen asociados un conjunto de metadatos que agregan información acerca del dataset.
+            </p>
+            <p>
+              Algunos ejemplos de metadatos más habituales:
+            </p>
+            <ul>
+              <li>Título</li>
+              <li>Tags o etiquetas</li>
+              <li>Organización</li>
+              <li>Autor</li>
+              <li>Responsable</li>
+              <li>Frecuencia de actualización</li>
+              <li>Granularidad</li>
+              <li>Última actualización</li>
+            </ul>
+          </section>
 
-        <section>
-          <h3>Otros ejemplos</h3>
-          <ul>
-            <li><a href='http://opensas.cartodb.com/viz/7eac5748-38ad-11e4-bce0-0e10bcd91c2b/public_map'>Votos en la ONU por la creación de un marco legal para la reestructuración de deuda</a></li>
-            <li><a href='http://pami.cartodb.com/viz/79ce56fc-6d0c-11e4-b9e4-0e018d66dc29/public_map'>Cantidad de farmacias por habitantes en condiciones de jubilarse</a></li>
-            <li><a href='http://blog.jazzido.com/indicadoresEducativosAR/#abandono/egb_1/2003'>Indicadores educativos</a></li>
-            <li><a href='http://th-mayer.de/cartogram/#population'>Cartograma</a></li>
-            <li><a href='http://arena.palamago.com.ar/poblacion/'>Visualización de densidad poblacional</a></li>
-            <li><a href='http://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house'>Where can you afford to buy a house?</a></li>
-          </ul>
-        </section>
+          <section>
+            <h3>
+              APIs - Application programming interface
+            </h3>
+            <br />
+            <ul>
+              <li>
+                Las interfaces para programación de aplicaciones están pensadas para que las aplicaciones se comuniquen entre sí.
+              </li>
+              <li>
+                En vez de descargar un dataset para luego procesarlo, la aplicación utiliza la API para consultar o modificar la información.
+              </li>
+              <li>
+                Se utiliza para acceder en tiempo real a información dinámica, por ejemplo el estado del tráfico, el timeline de twitter, el saldo de mi cuenta bancaria.
+              </li>
+              <li>
+                O cuando no tiene sentido, o resulta imposible, descargar toda la información, por ejemplo: Wikipedia, OpenStreetMap, YouTube.
+              </li>
+            </ul>
+          </section>
 
-        <section>
-          <h3>Ejercicio 1</h3>
-
-          <ol>
-            <li>Ir al sitio de <a href='http://cartodb.com/'>CartoDB</a> y crear una nueva cuenta de usuario (<a href='https://cartodb.com/signup'>Sign up</a>).</li>
-            <li>Descargar el datasets de <a href='http://data.buenosaires.gob.ar/dataset/cajeros-automaticos'>Cajeros automáticos</a> (csv) del portal de datos de la Ciudad de Buenos Aires
-            </li>
-            <li>Importarlos a CartoDB</li>
-            <li>Crear un mapa de tipo Cluster</li>
-            <li>Crear un mapa de tipo Bubble según la cantidad de terminales</li>
-            <li>Crear un mapa de tipo Category según el campo <i>banco</i></li>
-            <li>Probar los mapas de tipo Heatmap, Intensity y Density</li>
-          </ol>
-
-        </section>
-
-        <section>
-          <h3>Ejercicio 2</h3>
-
-          <ol>
-            <li>Descargar los datasets de
-            <a href='http://data.buenosaires.gob.ar/dataset/barrios'>Barrios</a> (csv) y
-<a href='http://data.buenosaires.gob.ar/dataset/comunas'>Comunas</a> (csv)
-            del portal de datos de la Ciudad de Buenos Aires
-            </li>
-            <li>Importarlos a CartoDB</li>
-            <li>Crear un mapa de tipo <a href='https://en.wikipedia.org/wiki/Choropleth_map'>Choropleth</a> de barrios por cantidad de cajeros automáticos y otro serǵun las comunas.</li>
-            <li>La siguiente consulta será útil para calcular la cantidad de cajeros por cada barrio / comuna (ajustar según corresponda):
-          <pre><code data-trim contenteditable>
-SELECT
-  *,
-  ( select count(*) from cajeros as c
-    where st_within(c.the_geom, b.the_geom)
-  ) as cajeros
-FROM
-  barrios as b
-          </code></pre>
-
-            </li>
-          </ol>
+          <section>
+            <h3>
+              Ejemplos de aplicaciones y visualizaciones
+            </h3>
+            <br />
+            <ul>
+              <li>
+                <a href='http://www.asap.org.ar/observatorio/#/poder/PODEJEC?t=info'>Observatorio Presupuestario</a>
+              </li>
+              <li>
+                <a href='http://www.cargografias.org'>Cargografías</a>
+              </li>
+              <li>
+                <a href='http://www.yoquierosaber.org/'>Yo quiero saber - Elecciones 2015</a>
+              </li>
+              <li>
+                <a href='http://www.larutaelectoral.com.ar/#/'>La ruta electoral</a>
+              </li>
+              <li>
+                <a href='http://interactivos.lanacion.com.ar/declaraciones-juradas'>Declaraciones Juradas</a> (<a href='http://vozdata.lanacion.com.ar/'>VozData</a>)
+              </li>
+              <li>
+                <a href='http://votaciones.lanacion.com.ar'>Congresoscopio</a>
+              </li>
+              <li>
+                <a href='http://bost.ocks.org/mike/nations/'>La salud y la riqueza de las naciones</a>
+              </li>
+              <li>
+                <a href='https://github.com/mbostock/d3/wiki/Gallery'>Visualizaciones con D3</a>
+              </li>
 
 
-        </section>
 
-        <section>
-          <h3>Ejercicio 3</h3>
 
-          <ol>
-            <li>Descargar el dataset con <a href='data/censo/comunas_censo_2010.csv'>Información del censo 2010 de las comunas de Capital Federal</a>
-            </li>
-            <li>Importarlo a CartoDB</li>
-            <li>Explorar la información</li>
-            <li>Crear diversos mapas</li>
-          </ol>
+            </ul>
+          </section>
 
-        </section>
+          <section>
+            <h3>
+              Sistemas de Información geográfica (GIS)
+            </h3>
+            <p>
+              Sistemas de información que permiten crear, almacenar, editar, analizar y visualizar información geográficamente referenciada.
+            </p>
+            <p>
+              En un sentido más genérico se trata de herramientas que permiten crear consultas interactivas, analizar información espacial, editar datos y mapas, y visualizar los resultados de estas operaciones.
+            </p>
+          </section>
 
-        <section>
-          <h3>Muchas gracias</h3>
-          <p>
-            <small>
-              <a href="https://twitter.com/pollatos">Sergio Sorín</a> / <a href="https://twitter.com/pollatos">@pollatos</a> <br />
-              <a href="https://twitter.com/opensas">Sebastián Scarano</a> / <a href="https://twitter.com/opensas">@opensas</a>
-            </small>
-          </p>
-        </section>
+          <section>
+            <h4>
+              Un ejemplo famoso
+            </h4>
+            <p style="font-size:0.7em">
+              En 1854 el pionero de la epidemiología, el Dr. John Snow cartografió la incidencia de los casos de cólera en el distrito de Soho en Londres. Utilizando métodos cartográficos, no solo representaba la realidad, sino que por primera vez analizaba conjuntos de fenómenos geográficos dependientes.
+            </p>
+            <a class="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/643px-Snow-cholera-map-1.jpg" target="_blank">
+              <img height="500" src="images/snow_colera_map.jpg" alt="El mapa de John Snow">
+            </a>
+
+          </section>
+
+          <section>
+            <h4>
+              ¿Cómo se representa la información geográfica?
+            </h4>
+            <br />
+            <p>
+              <b><a href='https://es.wikipedia.org/wiki/Coordenadas_geogr%C3%A1ficas'>Coordenadas geográficas</a></b>: sistema de referencia que utiliza dos coordenadas angulares, latitud (Norte y Sur) y longitud (Este y Oeste) medidas desde el centro de la Tierra. Forman parte de un sistema de coordenadas geográficas que incluye un datum, meridiano principal y unidad angular.
+            </p>
+
+            <br />
+            <p>
+              <b><a href='https://es.wikipedia.org/wiki/Proyecci%C3%B3n_cartogr%C3%A1fica'>Coordenadas proyectadas</a></b>: sistema de representación que establece una relación entre los puntos de la superficie curva de la tierra (coordenadas geográficas) y los de una superficie plana (mapa). Los puntos se identifican por coordenadas cartesianas (x e y) que se obtienen matemáticamente a partir de las coordenadas geográficas (latitud y longitud).
+            </p>
+
+            <br />
+            <p>
+              El sistema de coordenadas más común es el <a href='https://es.wikipedia.org/wiki/WGS84'>WGS 84</a>
+            </p>
+
+          </section>
+
+          <section>
+            <h3>
+              Formatos de archivos <br />
+              con información geográfica
+            </h3>
+            <br />
+            <ul>
+              <li>csv con coordenadas (lat, long)</li>
+              <li>csv con polígonos</li>
+              <li><a href='https://en.wikipedia.org/wiki/Shapefile'>shape files</a></li>
+              <li><a href='https://en.wikipedia.org/wiki/GeoJSON'>geojson</a> </li>
+              <li><a href='https://en.wikipedia.org/wiki/Keyhole_Markup_Language'>kml</a></li>
+            </ul>
+
+            <br />
+            <br />
+            <p style='font-size:0.7em'>
+              <b>Tip</b>: Para jugar interactivamente con estos formatos: <a href='http://geojson.io/'>geojson.io</a>
+            </p>
+          </section>
+
+          <section>
+            <h3>Ejemplos: Mapas electorales</h3>
+            <ul>
+              <li><a href='http://www.lanacion.com.ar/1818264-elecciones-2015-paso-mapas'>Primarias Presidenciales 2015 (La Nación)</a></li>
+              <li><a href='http://paso2015.andytow.com/'>Primarias Presidenciales 2015 (Andy Tow)</a></li>
+              <li><a href='http://elecciones.andytow.com/'>Cartograma electoral (Andy Tow)</a></li>
+              <li><a href='http://elections.huffingtonpost.com/2012/custom-presidential-election-map#nlavvnjanwsujensw'>Huffigton Post Election Dashboard</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Ejemplos: Aplicaciones</h3>
+            <ul>
+              <li><a href='https://mapa.buenosaires.gob.ar'>Mapa Interactivo de Buenos Aires</a></li>
+              <li><a href='https://www.openstreetmap.org'>OpenStreetMap</a></li>
+              <li><a href='https://www.google.com.ar/maps'>Google Maps</a></li>
+              <li><a href='http://www.nardoz.com/mapa-cultura'>Mapa Cultural</a></li>
+              <li><a href='http://archivodecasos.com.ar/archivo/mapa/'>Mapa de Correpi</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Ejemplos: la dimensión temporal</h3>
+            <ul>
+              <li><a href='https://viz2.cartodb.com/viz/70bc854e-68fc-11e3-8e22-0e49973114de/public_map'>Creación de oficinas de Correo en EEUU</a></li>
+              <li><a href='http://www.theguardian.com/news/datablog/interactive/2012/oct/01/first-world-war-royal-navy-ships-mapped
+  '>Flota inglesa en la Primera Guerra Mundial</a></li>
+              <li><a href='http://www.nytimes.com/interactive/2011/04/28/us/tornado-deaths.html?_r=0'>Muertes por tornados en EEUU en el último medio siglo</a></li>
+              <li><a href='http://www.nardoz.com/HotelViz/'>HotelViz</a></li>
+              <li><a href='http://www.therefugeeproject.org'>El proyecto refugiados</a></li>
+              <li><a href='http://flowingdata.com/2009/01/08/animated-map-shows-one-year-of-edits-to-openstreetmap/'>Ediciones de OpenStreetMap de 2008</a></li>
+              <li><a href='http://knightlab.northwestern.edu/2014/04/04/storymapjs-gigapixel-tool-follows-game-of-thrones-adventure/'>StoryMapJS - Game of Thrones</a></li>
+              <li><a href='http://www.nytimes.com/newsgraphics/2013/08/18/reshaping-new-york/'>Reshaping New York</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Otros ejemplos</h3>
+            <ul>
+              <li><a href='http://opensas.cartodb.com/viz/7eac5748-38ad-11e4-bce0-0e10bcd91c2b/public_map'>Votos en la ONU por la creación de un marco legal para la reestructuración de deuda</a></li>
+              <li><a href='http://pami.cartodb.com/viz/79ce56fc-6d0c-11e4-b9e4-0e018d66dc29/public_map'>Cantidad de farmacias por habitantes en condiciones de jubilarse</a></li>
+              <li><a href='http://blog.jazzido.com/indicadoresEducativosAR/#abandono/egb_1/2003'>Indicadores educativos</a></li>
+              <li><a href='http://th-mayer.de/cartogram/#population'>Cartograma</a></li>
+              <li><a href='http://arena.palamago.com.ar/poblacion/'>Visualización de densidad poblacional</a></li>
+              <li><a href='http://www.theguardian.com/society/ng-interactive/2015/sep/02/unaffordable-country-where-can-you-afford-to-buy-a-house'>Where can you afford to buy a house?</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Ejercicio 1</h3>
+
+            <ol>
+              <li>Ir al sitio de <a href='http://cartodb.com/'>CartoDB</a> y crear una nueva cuenta de usuario (<a href='https://cartodb.com/signup'>Sign up</a>).</li>
+              <li>Descargar el datasets de <a href='http://data.buenosaires.gob.ar/dataset/cajeros-automaticos'>Cajeros automáticos</a> (csv) del portal de datos de la Ciudad de Buenos Aires
+              </li>
+              <li>Importarlos a CartoDB</li>
+              <li>Crear un mapa de tipo Cluster</li>
+              <li>Crear un mapa de tipo Bubble según la cantidad de terminales</li>
+              <li>Crear un mapa de tipo Category según el campo <i>banco</i></li>
+              <li>Probar los mapas de tipo Heatmap, Intensity y Density</li>
+            </ol>
+
+          </section>
+
+          <section>
+            <h3>Ejercicio 2</h3>
+
+            <ol>
+              <li>Descargar los datasets de
+              <a href='http://data.buenosaires.gob.ar/dataset/barrios'>Barrios</a> (csv) y
+  <a href='http://data.buenosaires.gob.ar/dataset/comunas'>Comunas</a> (csv)
+              del portal de datos de la Ciudad de Buenos Aires
+              </li>
+              <li>Importarlos a CartoDB</li>
+              <li>Crear un mapa de tipo <a href='https://en.wikipedia.org/wiki/Choropleth_map'>Choropleth</a> de barrios por cantidad de cajeros automáticos y otro serǵun las comunas.</li>
+              <li>La siguiente consulta será útil para calcular la cantidad de cajeros por cada barrio / comuna (ajustar según corresponda):
+            <pre><code data-trim contenteditable>
+  SELECT
+    *,
+    ( select count(*) from cajeros as c
+      where st_within(c.the_geom, b.the_geom)
+    ) as cajeros
+  FROM
+    barrios as b
+            </code></pre>
+
+              </li>
+            </ol>
+
+
+          </section>
+
+          <section>
+            <h3>Ejercicio 3</h3>
+
+            <ol>
+              <li>Descargar el dataset con <a href='data/censo/comunas_censo_2010.csv'>Información del censo 2010 de las comunas de Capital Federal</a>
+              </li>
+              <li>Importarlo a CartoDB</li>
+              <li>Explorar la información</li>
+              <li>Crear diversos mapas</li>
+            </ol>
+
+          </section>
+
+          <section>
+            <h3><a href='#/2'>Volver arriba</a></h3>
+            <p>
+              <small>
+                <a href="https://twitter.com/pollatos">Sergio Sorín</a> / <a href="https://twitter.com/pollatos">@pollatos</a> <br />
+                <a href="https://twitter.com/opensas">Sebastián Scarano</a> / <a href="https://twitter.com/opensas">@opensas</a>
+              </small>
+            </p>
+          </section>
+
+
+        </section> <!-- Fin Introducción a Datos Abiertos y CartoDB -->
+
+        <section> <!-- Acondicionamiento de datos con OpenRefine -->
+
+          <section>
+            <h2>Segundo encuentro</h2>
+            <br />
+            <h3>Acondicionando tus datos con OpenRefine</h3>
+            <br /><br />
+            <div class="fragment">
+              <h3>Agenda:</h3>
+              <ul>
+                <li>Data cleanse o "masajeo de datos"</li>
+
+              </ul>
+            </div>
+
+          </section>
+
+          <section>
+            <h2>Data cleanse<br /> o<br /> "masajeo de datos"
+            </h2>
+            <br />
+            <ul>
+              <li>
+                Consiste en descubrir, corregir o eliminar datos erróneos de un conjunto de datos
+              </li>
+              <li>
+                Permite identificar datos incompletos, inconsistentes, no pertinentes, inexactos, etc. para luego sustituir, modificar o eliminar esos datos sucios ("dirty data")
+              </li>
+              <li>
+                Se puede hacer de manera manual o utilizando diversas herramientas (planilas de cálculo, editores de texto, bases de datos, aplicativos ad-hoc)
+              </li>
+              <li>
+                <a href="openrefine.org">OpenRefine</a> es una herramienta libre para trabajar con "datos sucios", explorarlos, detectar inconsistencias, masajearlos, acondicionarlos, convertirlos de un formato a otro, enriquecerlo con web services, scrapear datos y varias cosas más
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Codificación de caracteres (Character encoding)</h2>
+            <ul>
+              <li>
+                Las máquinas sólo pueden procesar números, más precisamente bits.
+              </li>
+              <li>
+                Mediante la codificación de caracteres se puede convertir cada caracter a un número y viceversa. Es una tabla de conversión
+              </li>
+              <li>
+                Lamentablemente hay múltiples character encodings, y para poder procesar un archivo debemos saber cuál se ha utilizado para codificar los caracteres.
+              </li>
+              <li>
+                El encoding más utilizado actualmente es <a href="https://es.wikipedia.org/wiki/UTF-8">UTF-8</a>, es MUY recomendable grabar todos nuestros archivos utilizando ese encoding.
+              </li>
+              <li>
+                OpenRefine permite fácilmente reconocer el encoding que se está utilizando.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Funciones básicas de OpenRefine</h2>
+            <ul>
+              <li>
+                Múltiples opciones para importar datos (CSV, TSV, xls, xlsx, json, xml, urls, google data)
+              </li>
+              <li>
+                Vista previa de encodings
+              </li>
+              <li>
+                Facetas, Clusters
+              </li>
+              <li>
+                Transformaciones comunes: eliminar y colapsar espacios, mayúsculas y minúsculas
+              </li>
+              <li>
+                Filtros de texto, soporte de expresiones regulares
+              </li>
+              <li>
+                Fórmulas (soporte para GREL, Jython, Clojure)
+              </li>
+              <li>
+                Undo-Redo ilimitado
+              </li>
+              <li>
+                Exportar transformaciones como scripts
+              </li>
+              <li>
+                Múltiples opciones para exportar datos (CSV, TSV, xls, xlsx, json, xml, urls, google data, templates)
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>OpenRefine: algunos ejercicios</h3>
+            <h3>Funciones a utilizar</h3>
+            <ul>
+              <li>Eliminar espacios - trim leading and trailing whitespaces</li>
+              <li>Eliminar espacios consecutivos - collapse consecutive whitespace</li>
+              <li>Pasar todo a titlecase - to titlecase</li>
+              <li>Crear columna a partir de otras columnas</li>
+              <li>Renombrar columnas</li>
+              <li>Eliminar columnas</li>
+              <li>Reordenar columnas</li>
+              <li>Transformar celdas masivamente - value.replace(...)</li>
+              <li>Filtros de texto</li>
+              <li><a href="https://github.com/OpenRefine/OpenRefine/wiki/GREL-String-Functions#splits-sep">value.split()</a></li>
+              <li><a href="https://github.com/OpenRefine/OpenRefine/wiki/GREL-String-Functions#partitionstring-s-string-or-regex-frag-optional-boolean-omitfragment">value.partition()</a></li>
+            </ul>
+          </section>
+
+          <section style="text-align: justify">
+            <h3>Ejercicio 1</h3>
+            <p>
+              Tomar el archivo <a href='data/openrefine/01_juntas_discapacidad.csv'>01_juntas_discapacidad.csv</a> y normalizar el campo provincia y localidad. Luego generar un archivo separado por comas (CSV) con la siguiente estructura:
+            </p>
+            <ul style="padding-left: 50px">
+              <li>provincia</li>
+              <li>localidad</li>
+              <li>nombre</li>
+              <li>direccion</li>
+              <li>horario</li>
+              <li>telefono</li>
+            </ul>
+            <p>
+
+            </p>
+            <p>
+              Consejos: Usar facetas y la opción cluster para arreglar el campo provincia.
+            </p>
+            <p>
+              El campo localidad tiene varias inconsistencias e información que está de más. Utiliza una faceta por este campo para localizar esos registros y ver qué fórmula aplicar para dejar solamente el nombre de la localidad.
+            </p>
+            <p>
+              Nota: la solución del ejercicio está <a href="http://github.com/opensas/cartografias/blob/gh-pages/openrefine/ejercicio01.md">aquí</a>
+            </p>
+          </section>
+
+          <section style="text-align: justify">
+            <h3>Ejercicio 2</h3>
+            <div style="font-size:0.8em">
+            <p>
+              Tomar el archivo <a href='data/openrefine/02_personas.csv'>02_personas.csv</a>, normalizar todos los campos y generar un archivo separado por comas (CSV) con la siguiente estructura:
+            </p>
+            <ul style="padding-left: 50px">
+              <li>titulo: doctor, ingeniero, etc</li>
+              <li>nombres</li>
+              <li>apellido</li>
+              <li>edad</li>
+              <li>nacionalidad</li>
+            </ul>
+            <p>
+              Usar facetas y la opción cluster para arreglar la nacionalidad. Las nacionalidades que deberían quedar son: Argentina, Brasileña, Chilena, Uruguaya, Otra y en blanco.
+            </p>
+            <p>
+              Los únicos títulos que deberían quedar son: Dr.,Ing.,Lic.,Prof. (Señor y Sr. los eliminamos)
+            </p>
+            <p>
+              Para ver cuáles son los títulos actualmente cargados resultará útil hacer una faceta por la primera palabra del campo nombre (Customized Facet)
+            </p>
+            <p>
+              Para separar el nombre del apellido, hay que tener en cuenta que algunos registros vienen en la forma "apellido, nombre" y otros como "nombre apellido". Utilizar el filtro de texto para tratar estos dos casos por separado. En el primer caso podremos usar split separando por el caracter coma y en el segundo separando por el caracter espacio.
+            </p>
+            <p>
+              Nota: la solución del ejercicio está <a href="http://github.com/opensas/cartografias/blob/gh-pages/openrefine/ejercicio02.md">aquí</a>
+            </p>
+            </div>
+          </section>
+
+          <section>
+            <h3>Geocodificando direcciones con OpenRefine</h3>
+            <p class='fragment'>
+              Vamos a consumir un <a href ='https://es.wikipedia.org/wiki/Servicio_web'>servicio web</a> de tipo <a href='https://es.wikipedia.org/wiki/Representational_State_Transfer'>REST</a> que nos retornará un <a href='https://es.wikipedia.org/wiki/JSON'>JSON</a> para <a href='https://es.wikipedia.org/wiki/Geocodificaci%C3%B3n'>geocodificar</a> nuestras direcciones.
+              <br />
+              <br />
+              <br />
+            <h1 class='fragment'>¿¿¿Lo qué???</h1>
+            </p>
+          </section>
+
+          <section>
+
+            <h2>Servicio Web</h2>
+            <h4>
+              Es un sistema que corre en la web y que permite intercambiar datos entre aplicaciones.
+            </h4>
+            <br />
+
+            <div class='fragment'>
+
+              <h2>REST</h2>
+              <h4>
+                Es un estilo de servicio web que busca aprovechar la infraestructura de internet y permitir intercambiar información de una manera simple
+              </h4>
+              <br />
+
+              <div class='fragment'>
+
+                <h3>JSON - JavaScript Object Notation</h3>
+                <h4>
+                  Es un formato liviano para el intercambio de datos. Todo objeto JSON es a su vez un objeto válido en JavaScript, lo que hace que trabajar con él sea muy fácil.
+                </h4>
+
+              </div>
+
+            </div>
+          </section>
+
+          <section style="text-align: justify; font-size:0.8em">
+
+            <h2>Un ejemplo de JSON</h2>
+            <p>
+              <a href='https://duckduckgo.com'>DuckDuckGo</a> es un buscador web que pretende competir con Google respetando nuestra privacidad.
+            </p>
+            <p>
+
+              Provee una API REST que nos brinda su funcionalidad como un web service. Por ejemplo, para ver el resultado de buscar "Buenos Aires" a través de la API ingresamos: <br />
+              <a href='http://api.duckduckgo.com/?q=buenos%20aires&format=json&pretty=1'>http://api.duckduckgo.com/?q=buenos aires&format=json&pretty=1</a>
+            </p>
+
+            <pre><code data-trim contenteditable>
+{
+   "Heading" : "Buenos Aires",
+   "RelatedTopics" : [
+      {
+         "Icon" : {
+            "URL" : "https://duckduckgo.com/i/c8804af5.png",
+         },
+         "FirstURL" : "https://duckduckgo.com/Buenos_Aires",
+         "Text" : "Buenos Aires The capital and largest city of Argentina..."
+      },
+      {
+         "Icon" : {
+            "URL" : "https://duckduckgo.com/i/2826ecf7.png",
+         },
+         "FirstURL" : "https://duckduckgo.com/Buenos_Aires_Province",
+         "Text" : "Province of Buenos AiresThe largest and most populous Argentinian province."
+      },
+      [...]
+   ]
+};
+            </code></pre>
+
+          </section>
+
+          <section style="text-align: justify; font-size:0.8em">
+
+            <h2>Un ejercicio con JSON</h2>
+            <p>
+              Tomando el ejemplo del resultado de consultar la API de DuckDuckGo, recorrereremos el JSON devuelto utilizando JavaScript.
+            </p>
+            <p>
+              Abrir un explorador web (Firefox o Chrome), apretar F12 para abrir la consola JavaScript, y pegar el siguente texto:
+            </p>
+
+            <pre><code data-trim contenteditable>
+var resultados = {
+  "Heading" : "Buenos Aires",
+  "RelatedTopics" : [
+     {
+        "Icon" : {
+           "URL" : "https://duckduckgo.com/i/c8804af5.png",
+        },
+        "FirstURL" : "https://duckduckgo.com/Buenos_Aires",
+        "Text" : "Buenos Aires The capital and largest city of Argentina..."
+     },
+     {
+        "Icon" : {
+           "URL" : "https://duckduckgo.com/i/2826ecf7.png",
+        },
+        "FirstURL" : "https://duckduckgo.com/Buenos_Aires_Province",
+        "Text" : "Province of Buenos AiresThe largest and most populous Argentinian province."
+     },
+     {
+        "Icon" : {
+           "URL" : "https://duckduckgo.com/i/35bb000c.jpg",
+        },
+        "FirstURL" : "https://duckduckgo.com/Greater_Buenos_Aires",
+        "Text" : "Greater Buenos Aires, the urban agglomeration comprising..."
+     }
+  ]
+};
+            </code></pre>
+
+            <p>
+              Utilizando JavaScript consultar el Heading, el url del ícono del primer resultado, el url del ícono del último resultado y la cantidad de resultados retornados por la consulta.
+            </p>
+
+            <p>
+              Nota: la solución del ejercicio está <a href="http://github.com/opensas/cartografias/blob/gh-pages/openrefine/ejercicio_json.md">aquí</a>
+            </p>
+
+
+          </section>
+
 
       </div>
 

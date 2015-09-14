@@ -1,4 +1,4 @@
-# Taller de introducción a OpenRefine
+# Taller de Cartografías: Introducción a OpenRefine
 
 Aquí encontrarán dos ejercicios para practicar el uso de funciones básicas con OpenRefine.
 

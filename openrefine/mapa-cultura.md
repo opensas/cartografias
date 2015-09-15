@@ -46,6 +46,9 @@ value.split('(')[0].trim()
 
 --
 
+16. Crear columna direccion_cp
+value + ' (' + cells.cp.value + ')'
+
 2. Geocodificar nuestra información utilizando servicios web
 ============================================================
 

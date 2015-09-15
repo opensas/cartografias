@@ -29,17 +29,17 @@ En cada columna, Edit column -> Rename this column
   value.split(' ')[0]
 
   2. Eliminamos espacios:
-  Click en nacionalidad -> Edit Cells -> Common transforms -> trim leading and trailing whitespaces
+  Click en nombre -> Edit Cells -> Common transforms -> trim leading and trailing whitespaces
 
   3. Eliminamos espacios consecutivos:
-  Click en nacionalidad -> Edit Cells -> Common transforms -> collapse consecutive whitespace
+  Click en nombre -> Edit Cells -> Common transforms -> collapse consecutive whitespace
 
   4. Pasamos todo a titlecase:
-  Click en nacionalidad -> Edit Cells -> Common transforms -> to titlecase
+  Click en nombre -> Edit Cells -> Common transforms -> to titlecase
 
   5. Seleccionamos manualmente cada una de las primeras palabras que son titulos
   Hacemos click en 'include' en cada una de ellas
-  Doctor, Dr.,Ing, Ing., Ingeniero, Lic, Lic., Licenciado, Prof., Señor, Sr.
+  Doctor, Dr., Ing, Ing., Ingeniero, Lic, Lic., Licenciado, Prof., Señor, Sr.
 
   6. Creamos una nueva columna llamada titulo, con la primera palabra
 
@@ -59,7 +59,7 @@ En cada columna, Edit column -> Rename this column
   Con la opción cluster vamos arreglando el campo titulo para que queden de la siguiente manera:
   Dr., Ing., Lic., Prof. y en blanco.
 
-  9. Editar manualmente las nacionalidad que no hayan sido resueltas mediante cluster
+  9. Editar manualmente los títulos que no hayan sido resueltas mediante cluster
 
 4. Separar el nombre del apellido
 
@@ -76,7 +76,7 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Column -> Add column based on this column
 
-  name: nuevo_nombre
+  name: nombres
   value.split(',')[1].trim()
 
   Limpiamos el filtro
@@ -87,9 +87,9 @@ En cada columna, Edit column -> Rename this column
 
   Click en apellido -> Facet -> Customized Facet -> Facet by blank -> include en true
 
-  Completamos la columna nuevo nombre
+  Completamos la columna nombres
 
-  Click en nuevo_nombre -> Edit cells -> Transform ->
+  Click en nombres -> Edit cells -> Transform ->
 
   cells.nombre.value.split(' ')[0]
 
@@ -102,6 +102,8 @@ En cada columna, Edit column -> Rename this column
   Click en nombre -> Edit column -> Remove this column
 
   Click en nuevo_nombre -> Edit column -> Rename this column
+
+  Eliminamos espacios de nombres y apellido
 
 5. Cambiamos el orden de las columnas
 

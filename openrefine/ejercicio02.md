@@ -11,15 +11,14 @@ En cada columna, Edit column -> Rename this column
   2. Eliminamos espacios:
   Click en nacionalidad -> Edit Cells -> Common transforms -> trim leading and trailing whitespaces
 
-  2. Pasamos todo a titlecase:
+  3. Pasamos todo a titlecase:
   Click en nacionalidad -> Edit Cells -> Common transforms -> to titlecase
 
-  3. Cluster
+  4. Cluster
   Con la opción cluster vamos arreglando las nacionalidad para que queden de la siguiente manera:
   Argentina, Brasileña, Chilena, Uruguaya, Otra y en blanco.
 
-  4. Editar manualmente las nacionalidad que no hayan sido resueltas mediante cluster
-
+  5. Editar manualmente las nacionalidad que no hayan sido resueltas mediante cluster
 
 3. Creamos el titulo
 
@@ -45,13 +44,15 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Edit column -> Add column based on this column
 
-  titulo
-  value.partition(' ')[0]
+  New columna name: titulo
+
+  expression: value.partition(' ')[0]
 
   7. Eliminamos el titulo de la columna nombre
 
   Click en nombre -> Edit cells -> transform
-  value.partition(' ')[2]
+
+  expression: value.partition(' ')[2]
 
   8. Normalizamos titulo, facetamos por titulo
   Click en titulo -> Facet -> Text facet
@@ -71,13 +72,14 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Column -> Add column based on this column
 
-  name: apellido
-  value.split(',')[0]
+  New column name: apellido
+
+  expresion: value.split(',')[0]
 
   Click en nombre -> Column -> Add column based on this column
 
-  name: nombres
-  value.split(',')[1].trim()
+  New column name: nuevo_nombre
+  Expression: value.split(',')[1].trim()
 
   Limpiamos el filtro
 
@@ -87,9 +89,9 @@ En cada columna, Edit column -> Rename this column
 
   Click en apellido -> Facet -> Customized Facet -> Facet by blank -> include en true
 
-  Completamos la columna nombres
+  Completamos la columna nuevo_nombre
 
-  Click en nombres -> Edit cells -> Transform ->
+  Click en nuevo_nombre -> Edit cells -> Transform ->
 
   cells.nombre.value.split(' ')[0]
 
@@ -101,7 +103,7 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Edit column -> Remove this column
 
-  Click en nuevo_nombre -> Edit column -> Rename this column
+  Click en nuevo_nombre -> Edit column -> Rename this column -> nombres
 
   Eliminamos espacios de nombres y apellido
 

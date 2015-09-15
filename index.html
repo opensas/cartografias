@@ -760,6 +760,64 @@
 
           <section data-background-color="rgba( 22, 152, 213, 0.6 )" style="text-align: justify; font-size:0.7em">
 
+            <h2>Otro ejemplo: la API de CKAN</h2>
+            <p>
+              CKAN provee una API para poder consultar los datasets y demás recursos publicados en el portal.
+            </p>
+
+            <p>
+            Ej: consultar los datasets disponibles: <a href='http://demo.ckan.org/api/3/action/package_list'>http://demo.ckan.org/api/3/action/package_list</a>
+            <p>
+
+            <pre><code data-trim contenteditable>
+{
+  "help": "http://demo.ckan.org/api/3/action/help_show?name=package_list", "success": true,
+  "result": [
+    "afghanistan-election-data",
+    "community-maps",
+    "comparativo-anos-anteriores-accidentalidad-sector-minas-y-canteras-de-colombia",
+    [...]
+  ]
+}
+            </code></pre>
+
+            <p>
+            Ej: buscar datasets por palabras claves: <a href='http://demo.ckan.org/api/3/action/package_search?q=spending'>http://demo.ckan.org/api/3/action/package_search?q=spending</a>
+            <p>
+
+            <pre><code data-trim contenteditable>
+{
+  "help": "http://demo.ckan.org/api/3/action/help_show?name=package_search", "success": true,
+  "result": {
+    "count": 3,
+    "results": [
+      {
+        "id": "34315559-2b08-44eb-a2e6-ebe9ce1a266b",
+        "license_title": "Creative Commons Attribution",
+        "author": "",
+        "resources": [
+          {
+            "id": "0c2bd47a-6ac5-412e-a337-1b45a952e07e",
+            "name": "December 2011",
+            "mimetype": "text/csv",
+            "format": "CSV",
+            "url": "http://www.newcastle.gov.uk/sites/drupalncc.newcastle.gov.uk/files/wwwfileroot/your-council/local_transparency/december_2011.csv",
+            "last_modified": "2012-03-13T22:04:31.993982",
+            "resource_type": "file",
+            "size": "1081957"
+          }, [...]
+        ]
+      }, [...]
+    ]
+  }
+}
+            </code></pre>
+
+
+          </section>
+
+          <section data-background-color="rgba( 22, 152, 213, 0.6 )" style="text-align: justify; font-size:0.7em">
+
             <h2>Un ejercicio con JSON</h2>
             <p>
               Tomando el ejemplo del resultado de consultar la API de DuckDuckGo, recorrereremos el JSON devuelto utilizando JavaScript.
@@ -806,6 +864,7 @@ var resultados = {
             </p>
 
           </section>
+
 
           <section data-background-color="rgba( 255, 122, 0, 0.6 )">
             <h3>Servicios para geocodificar</h3>

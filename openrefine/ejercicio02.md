@@ -44,15 +44,16 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Edit column -> Add column based on this column
 
-  New columna name: titulo
-
-  expression: value.partition(' ')[0]
+```
+  New column name: titulo
+  Expression: value.partition(' ')[0]
+```
 
   7. Eliminamos el titulo de la columna nombre
 
   Click en nombre -> Edit cells -> transform
 
-  expression: value.partition(' ')[2]
+  Expression: value.partition(' ')[2]
 
   8. Normalizamos titulo, facetamos por titulo
   Click en titulo -> Facet -> Text facet
@@ -74,11 +75,12 @@ En cada columna, Edit column -> Rename this column
 
   New column name: apellido
 
-  expresion: value.split(',')[0]
+  Expression: value.split(',')[0]
 
   Click en nombre -> Column -> Add column based on this column
 
   New column name: nuevo_nombre
+
   Expression: value.split(',')[1].trim()
 
   Limpiamos el filtro

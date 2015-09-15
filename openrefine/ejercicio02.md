@@ -25,7 +25,10 @@ En cada columna, Edit column -> Rename this column
   1. Creamos una faceta por la primera palabra del nombre, para ver cuáles son los titulos
 
   Click en nombre -> Facet -> Custom text facet
-  value.split(' ')[0]
+
+```
+  Expression: value.split(' ')[0]
+```
 
   2. Eliminamos espacios:
   Click en nombre -> Edit Cells -> Common transforms -> trim leading and trailing whitespaces
@@ -53,9 +56,12 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Edit cells -> transform
 
+```
   Expression: value.partition(' ')[2]
+```
 
   8. Normalizamos titulo, facetamos por titulo
+
   Click en titulo -> Facet -> Text facet
 
   Con la opción cluster vamos arreglando el campo titulo para que queden de la siguiente manera:
@@ -73,15 +79,17 @@ En cada columna, Edit column -> Rename this column
 
   Click en nombre -> Column -> Add column based on this column
 
+```
   New column name: apellido
-
   Expression: value.split(',')[0]
+```
 
   Click en nombre -> Column -> Add column based on this column
 
+```
   New column name: nuevo_nombre
-
   Expression: value.split(',')[1].trim()
+```
 
   Limpiamos el filtro
 
@@ -95,11 +103,15 @@ En cada columna, Edit column -> Rename this column
 
   Click en nuevo_nombre -> Edit cells -> Transform ->
 
-  cells.nombre.value.split(' ')[0]
+```
+  Expression: cells.nombre.value.split(' ')[0]
+```
 
   Click en apellido -> Edit cells -> Transform ->
 
-  cells.nombre.value.split(' ')[1]
+```
+  Expression: cells.nombre.value.split(' ')[1]
+```
 
   Eliminamos la columna original nombre
 

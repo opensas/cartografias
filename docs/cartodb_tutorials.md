@@ -40,7 +40,7 @@ http://academy.cartodb.com/d/1.0_month.csv
 - heatmap
 
 
-Ejercicio:
+- Ejercicio 1:
 
 explorar los distintos tipos de gráficos
 y pensar cuál sería más adecuado
@@ -50,6 +50,24 @@ filtrar los terremotos de magnitud mayor a 4
 http://academy.cartodb.com/d/1.0_month.csv
 
 
+- Ejercicio 2
+
+Generar un chroropleth con esta información
+
+Utilizar diversos métodos de quantificación
+
+http://www.lavoz.com.ar/interactivo/el-mapa-del-cancer-en-cordoba-y-santa-fe
+
+https://www.google.com/fusiontables/DataSource?docid=1ioORG-uXoB2iqetth6P9X0WxvnlWi7ghFjJkWjMV#rows:id=1
+
+- Ejercicio 3
+
+Reproducir el experimento de Snow
+http://docs.cartodb.com/tutorials/conditional_styling.html
+http://blog.rtwilson.com/updated-snow-gis-data/
+
+opensas.github.io/cartografias/data/snow/cholera_deaths.zip
+opensas.github.io/cartografias/data/snow/pumps.zip
 
 Lesson 1:
 

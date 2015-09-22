@@ -1,8 +1,143 @@
+Ejercicio:
+
+comunas
+http://data.buenosaires.gob.ar/dataset/comunas
+
+mostrar cartoCSS
+
+- condiciones
+zoom
+comuna = 6
+
+- labels
+condiciones
+
+- quantification
+
+SELECT *,
+round(area / 1000000) -6 as area2
+FROM comunas_1
+order by area2
+
+filtros
+
+mapa_cultura
+
+demo:
+
+filtrar por caba y teatros
+y crear un dataset a partir de eso
+
+
+
+
+metodos:
+
+http://academy.cartodb.com/d/1.0_month.csv
+
+- composite
+
+- heatmap
+
+
+Ejercicio:
+
+explorar los distintos tipos de gráficos
+y pensar cuál sería más adecuado
+
+filtrar los terremotos de magnitud mayor a 4
+
+http://academy.cartodb.com/d/1.0_month.csv
+
+
+
+Lesson 1:
+
+cartoCSS
+
+http://academy.cartodb.com/courses/05-academy-lite/lesson-1.html
+http://academy.cartodb.com/courses/02-design-for-beginners/lesson-2.html
+
+CartoCSS properties:
+https://github.com/mapbox/carto/blob/master/docs/latest.md
+
+labels
+http://academy.cartodb.com/courses/02-design-for-beginners/lesson-4.html
+
+quantification
+http://academy.cartodb.com/courses/06-intermediate-design/lesson-1.html#quantification
+
+SELECT *,
+round(area / 1000000) -6 as area2
+FROM comunas_1
+order by area2
+
+filtros
+terremotos: http://academy.cartodb.com/d/1.0_month.csv
+
+
+
+Ejercicio
+
+
+
+
+
+agregar los labels para
+
+cuando el zoom sea 6 mostrar los de magnitud >= 6
+
+y a medida que aumentamos el zoom mostrar terremotos más debiles
+
+
+
+
+
+labels
+[zoom = xxx]
+
+comunas
+
+#comunas_1 [comuna = 6] {
+  polygon-fill: #6B0FB2;
+  polygon-opacity: 0.3;
+  line-color: #055D00;
+  line-width: 5;
+  line-opacity: 1;
+}
+
+#comunas_1 [comuna = 6] [zoom > 12] {
+  polygon-fill: #B40903;
+  polygon-opacity: 0.8;
+  line-color: #055D00;
+  line-width: 15;
+  line-opacity: 1;
+}
+
+-- mostrar los distintos tipos de gráficos
+
+
+
+----------------
+
+
+resources:
+
+http://academy.cartodb.com/
+
+http://docs.cartodb.com/tips-and-tricks.html
+
+http://blog.cartodb.com
+
+http://blog.cartodb.com/categories/how-to-guides/
+http://blog.cartodb.com/categories/education/
+http://blog.cartodb.com/categories/academy/
+
+--
+
 http://www.gdeltproject.org/about.html
 
-
 http://blog.gdeltproject.org/
-
 
 
 http://blog.gdeltproject.org/mapping-gdelt-in-cartodb-a-tutorial/
@@ -38,7 +173,6 @@ http://academy.cartodb.com/
 --
 
 projections
-
 
     4326 for WGS84, which defines the_geom;
     3857 for Web Mercator, which defines the_geom_webmercator.
@@ -93,6 +227,8 @@ where
     CDB_LatLng(-34.603720, -58.381606)::geography
   ) < 1000
 
+http://gis.stackexchange.com/questions/155584/cartodb-postgis-near-function-distance-points-to-polygons
+
 los 50 cajeros más cercanos al obelisco
 
 SELECT
@@ -104,9 +240,10 @@ SELECT
   ) as distancia
 FROM
   cajeros
-order by Distancia asc
+order by distancia asc
 limit 50
 
+http://blog.cartodb.com/nearest-neighbor-joins/
 
 los puntos en una caja
 
@@ -136,3 +273,36 @@ SELECT
 --
 
 http://docs.cartodb.com/tips-and-tricks.html
+
+--
+
+Temas para clase cartodb avanzado
+
+- cartocss
+http://academy.cartodb.com/courses/05-academy-lite/lesson-1.html
+http://academy.cartodb.com/courses/02-design-for-beginners/lesson-2.html
+https://github.com/mapbox/carto/blob/master/docs/latest.md
+
+
+marker-width
+http://academy.cartodb.com/courses/02-design-for-beginners/lesson-3.html
+
+quantification methods
+http://academy.cartodb.com/courses/06-intermediate-design/lesson-1.html
+
+labels
+http://academy.cartodb.com/courses/02-design-for-beginners/lesson-4.html
+
+torque
+http://academy.cartodb.com/courses/01-beginners-course/lesson-4.html
+
+multilayer
+
+tipos de mapas
+http://academy.cartodb.com/courses/06-intermediate-design/lesson-1.html
+
+
+
+gis stack exchange
+http://gis.stackexchange.com/
+http://gis.stackexchange.com/questions/tagged/cartodb

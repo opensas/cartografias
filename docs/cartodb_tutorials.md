@@ -213,6 +213,34 @@ SELECT
   , 3857)
   as the_geom_webmercator
 
+dibujar un circulo de 50 metros alrededor del obelisco
+SELECT
+1 as cartodb_id,
+  ST_Transform(
+    ST_Buffer(
+      CDB_LatLng(-34.603720, -58.381606)::geography,
+      50
+    )::geometry,
+    3857
+  )
+as the_geom_webmercator
+
+
+-- para ver la deformacion de las proyecciones
+-- un circulo de 4500 kilometros
+SELECT
+1 as cartodb_id,
+  ST_Transform(
+    ST_Buffer(
+      CDB_LatLng(-34.603720, -58.381606)::geography,
+      4500000
+    )::geometry,
+    3857
+  )
+as the_geom_webmercator
+
+
+
 
 calcular el área
 SELECT

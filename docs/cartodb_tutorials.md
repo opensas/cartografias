@@ -118,12 +118,24 @@ comunas
 
 
 
+- ejercicio con el ejemplo de Snow
+http://docs.cartodb.com/tutorials/conditional_styling.html
+
+http://blog.rtwilson.com/updated-snow-gis-data/
+
+
+opensas.github.io/cartografias/data/snow/cholera_deaths.zip
+opensas.github.io/cartografias/data/snow/pumps.zip
+
+
 ----------------
 
 
 resources:
 
 http://academy.cartodb.com/
+
+http://docs.cartodb.com/tutorials.html
 
 http://docs.cartodb.com/tips-and-tricks.html
 
@@ -306,3 +318,8 @@ http://academy.cartodb.com/courses/06-intermediate-design/lesson-1.html
 gis stack exchange
 http://gis.stackexchange.com/
 http://gis.stackexchange.com/questions/tagged/cartodb
+
+projections
+
+http://docs.cartodb.com/tutorials/projections.html
+
